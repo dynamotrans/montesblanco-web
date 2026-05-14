@@ -612,8 +612,9 @@ body { top: 0 !important; position: static !important; }
 .about__media img {
   border-radius: 2px;
   box-shadow: var(--shadow-lg);
-  aspect-ratio: 4/5;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .about__media::before {
@@ -977,6 +978,11 @@ body { top: 0 !important; position: static !important; }
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 24px;
 }
+
+.contact-info--center { text-align: center; }
+.contact-info--center .eyebrow { margin-left: auto; margin-right: auto; }
+.contact-info--center .contact-list { max-width: 540px; margin: 0 auto; }
+.contact-info--center .contact-list li { justify-content: flex-start; }
 
 .contact-info .lead {
   color: rgba(248, 245, 240, 0.8);
