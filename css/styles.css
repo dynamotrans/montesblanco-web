@@ -318,16 +318,11 @@ p { color: var(--text-soft); }
   list-style: none;
   padding: 6px 0;
   margin: 0;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-6px);
-  transition: opacity var(--t-fast), transform var(--t-fast), visibility var(--t-fast);
+  display: none;
   z-index: 120;
 }
 .gt-switch.is-open .gt-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  display: block;
 }
 .gt-menu li { list-style: none; }
 .gt-menu button {
@@ -350,38 +345,70 @@ p { color: var(--text-soft); }
 .gt-menu button:hover { background: var(--cream); color: var(--navy); }
 .gt-menu button.is-current { background: var(--cream); color: var(--navy); font-weight: 600; }
 
-/* Hide Google Translate widget visually (functionality stays) */
+/* Hide Google Translate widget — moved completely off-screen */
 #google_translate_element {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  pointer-events: none;
-  opacity: 0;
+  position: fixed !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  z-index: -1 !important;
 }
 
-/* Esconder banda superior de Google Translate */
+/* Esconder banda superior y tooltips de Google Translate */
+.goog-te-banner-frame,
 .goog-te-banner-frame.skiptranslate,
 .skiptranslate iframe.goog-te-banner-frame,
+iframe.goog-te-menu-frame,
+.goog-te-balloon-frame,
+.goog-te-spinner-pos,
 .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+.VIpgJd-ZVi9od-l4eHX-hSRGPd,
+.VIpgJd-yAWNEb-L7lbkb {
   display: none !important;
   visibility: hidden !important;
+  height: 0 !important;
 }
 
-body { top: 0 !important; position: static !important; }
+html, body {
+  top: 0 !important;
+  position: static !important;
+}
+
+html.translated-ltr,
+html.translated-rtl,
+body.translated-ltr,
+body.translated-rtl {
+  top: 0 !important;
+}
 
 /* Esconder los tooltips/highlights de Google Translate */
 .goog-tooltip,
 .goog-tooltip:hover,
-#goog-gt-tt {
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-te-ftab,
+.goog-te-ftab-link,
+.goog-te-ftab-float {
   display: none !important;
 }
 
 .goog-text-highlight {
+  background: transparent !important;
   background-color: transparent !important;
   box-shadow: none !important;
+}
+
+/* Quitar el subrayado punteado que añade el traductor a algunos textos */
+font.googleTranslateBubbleDelay,
+font[style*="vertical-align"] {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
 }
 
 .nav__toggle {
@@ -615,9 +642,7 @@ body { top: 0 !important; position: static !important; }
   border-radius: 2px;
   box-shadow: var(--shadow-lg);
   width: 100%;
-  max-height: 640px;
   height: auto;
-  object-fit: contain;
   display: block;
 }
 
@@ -833,7 +858,9 @@ body { top: 0 !important; position: static !important; }
 }
 
 .partners__track {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   align-items: center;
   gap: 48px;
   width: max-content;
@@ -844,7 +871,7 @@ body { top: 0 !important; position: static !important; }
 }
 
 .partner {
-  flex-shrink: 0;
+  flex: 0 0 auto;
   height: 52px;
   min-width: 130px;
   padding: 0 12px;
@@ -869,6 +896,7 @@ body { top: 0 !important; position: static !important; }
   letter-spacing: 0.05em;
   color: var(--navy);
   white-space: nowrap;
+  display: inline-block;
 }
 
 @keyframes partners-scroll {
@@ -1280,12 +1308,11 @@ body { top: 0 !important; position: static !important; }
   .about,
   .visit,
   .contact-wrap {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .about__media { max-width: 460px; margin: 0 auto; }
   .about__media::before { display: none; }
-  .about__media img { max-height: 540px; }
 
   .visit__gallery { min-height: 360px; }
 
@@ -1346,8 +1373,7 @@ body { top: 0 !important; position: static !important; }
   .hero__actions { flex-direction: column; align-items: stretch; padding: 0 8px; }
   .hero__actions .btn { justify-content: center; }
 
-  .about__media { max-width: 360px; }
-  .about__media img { max-height: 460px; }
+  .about__media { max-width: 320px; }
 
   .services { gap: 16px; }
   .service { padding: 36px 24px; }
@@ -1404,8 +1430,7 @@ body { top: 0 !important; position: static !important; }
 
   .section-head h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
 
-  .about__media { max-width: 100%; }
-  .about__media img { max-height: 380px; }
+  .about__media { max-width: 280px; }
 
   .portal { padding: 28px 22px; min-height: 240px; }
   .portal h3 { font-size: 1.4rem; }
