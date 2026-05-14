@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0d2340">
 
+  <!-- Sincroniza html.lang con la traducción activa para que Chrome NO ofrezca traducir -->
+  <script>
+    (function () {
+      var m = document.cookie.match(/googtrans=\/[^/]+\/([a-zA-Z-]+)/);
+      if (m && m[1]) document.documentElement.lang = m[1];
+    })();
+  </script>
+
   <title data-i18n="meta.title">Montes Blanco Real Estate — Inmobiliaria boutique en Dos Hermanas</title>
   <meta name="description" data-i18n-attr="content:meta.description" content="Compra, venta y alquiler de propiedades en Dos Hermanas y Sevilla. Inmobiliaria boutique con asesoramiento personalizado desde 2005.">
   <meta name="author" content="Montes Blanco Real Estate SL">
