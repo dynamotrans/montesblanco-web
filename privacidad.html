@@ -17,20 +17,18 @@
 
   <header class="nav is-scrolled" id="nav">
     <div class="nav__inner">
-      <a href="index.html" class="nav__brand">
-        <div class="nav__brand-stack">
-          <span class="nav__brand-mark">MONTES BLANCO</span>
-          <span class="nav__brand-sub">Real Estate</span>
-        </div>
+      <a href="index.html" class="nav__brand" aria-label="Montes Blanco Real Estate — inicio">
+        <img src="images/logo.jpg" class="nav__brand-logo" alt="Montes Blanco Real Estate">
       </a>
       <nav>
         <ul class="nav__menu" id="navMenu">
-          <li><a href="index.html#top" data-i18n="nav.home">Inicio</a></li>
-          <li><a href="index.html#about" data-i18n="nav.about">Nosotros</a></li>
-          <li><a href="index.html#services" data-i18n="nav.services">Servicios</a></li>
-          <li><a href="index.html#properties" data-i18n="nav.properties">Inmuebles</a></li>
-          <li><a href="index.html#contact" data-i18n="nav.contact">Contacto</a></li>
-          <li><a href="tel:+34635643827" class="nav__cta" data-i18n="nav.cta">Llamar ahora</a></li>
+          <li><a href="index.html#top">Inicio</a></li>
+          <li><a href="index.html#about">Nosotros</a></li>
+          <li><a href="index.html#services">Servicios</a></li>
+          <li><a href="index.html#properties">Inmuebles</a></li>
+          <li><a href="index.html#contact">Contacto</a></li>
+          <li class="nav__translate"><div id="google_translate_element"></div></li>
+          <li><a href="tel:+34635643827" class="nav__cta">Llamar ahora</a></li>
         </ul>
       </nav>
       <button class="nav__toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
@@ -107,6 +105,18 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'en,fr,de,pt,ru,ar,it,nl,zh-CN,ja',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 
   <script src="js/main.js"></script>
 </body>
