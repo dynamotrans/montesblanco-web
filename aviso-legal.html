@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0d2340">
+  <script>
+    (function () {
+      var m = document.cookie.match(/googtrans=\/[^/]+\/([a-zA-Z-]+)/);
+      if (m && m[1]) document.documentElement.lang = m[1];
+    })();
+  </script>
   <title>Aviso Legal — Montes Blanco Real Estate</title>
   <meta name="description" content="Aviso legal de Montes Blanco Real Estate SL.">
   <meta name="robots" content="noindex,follow">
