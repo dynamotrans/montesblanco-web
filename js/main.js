@@ -1,10 +1,9 @@
 /* ============================================================
    MONTES BLANCO — main.js
    - Navbar scroll state + mobile toggle
-   - Smooth in-page navigation
    - Reveal-on-scroll (IntersectionObserver)
+   - Custom language switcher wired to Google Translate cookie
    - Year stamp + social link placeholders
-   (Idiomas: gestionados por Google Translate, ver index.html)
    ============================================================ */
 
 (() => {
@@ -13,6 +12,19 @@
   const SOCIAL = {
     facebook: 'https://www.facebook.com/p/Montes-Blanco-Real-Estate-61575004358296/',
     instagram: 'https://www.instagram.com/montesblancorealestate/'
+  };
+
+  const LANGS = {
+    es: {flag: '🇪🇸', code: 'ES'},
+    en: {flag: '🇬🇧', code: 'EN'},
+    fr: {flag: '🇫🇷', code: 'FR'},
+    de: {flag: '🇩🇪', code: 'DE'},
+    pt: {flag: '🇵🇹', code: 'PT'},
+    it: {flag: '🇮🇹', code: 'IT'},
+    ru: {flag: '🇷🇺', code: 'RU'},
+    ar: {flag: '🇸🇦', code: 'AR'},
+    'zh-CN': {flag: '🇨🇳', code: 'ZH'},
+    ja: {flag: '🇯🇵', code: 'JA'}
   };
 
   const $  = (sel, root = document) => root.querySelector(sel);
@@ -73,5 +85,66 @@
 
   if (SOCIAL.instagram) $('#igLink')?.setAttribute('href', SOCIAL.instagram);
   else $('#igLink')?.style.setProperty('display', 'none');
+
+  /* ============== LANGUAGE SWITCHER (Google Translate cookie) ============== */
+  const gtTrigger = $('#gtTrigger');
+  const gtMenu = $('#gtMenu');
+  const gtSwitch = $('#gtSwitch');
+
+  const getActiveLang = () => {
+    const m = document.cookie.match(/googtrans=\/[^/]+\/([a-zA-Z-]+)/);
+    return m && LANGS[m[1]] ? m[1] : 'es';
+  };
+
+  const setLangLabel = (code) => {
+    if (!gtTrigger) return;
+    const data = LANGS[code] || LANGS.es;
+    const flagEl = gtTrigger.querySelector('.gt-flag');
+    const codeEl = gtTrigger.querySelector('.gt-code');
+    if (flagEl) flagEl.textContent = data.flag;
+    if (codeEl) codeEl.textContent = data.code;
+    if (gtMenu) {
+      $$('button[data-lang]', gtMenu).forEach(b => {
+        b.classList.toggle('is-current', b.dataset.lang === code);
+      });
+    }
+  };
+
+  const setLang = (code) => {
+    const host = location.hostname;
+    document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    if (host) {
+      document.cookie = 'googtrans=; path=/; domain=.' + host + '; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie = 'googtrans=; path=/; domain=' + host + '; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    }
+    if (code && code !== 'es') {
+      document.cookie = 'googtrans=/auto/' + code + ';path=/';
+      if (host) {
+        document.cookie = 'googtrans=/auto/' + code + ';path=/;domain=.' + host;
+      }
+    }
+    location.reload();
+  };
+
+  if (gtTrigger && gtMenu && gtSwitch) {
+    setLangLabel(getActiveLang());
+
+    gtTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = gtSwitch.classList.toggle('is-open');
+      gtTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!gtSwitch.contains(e.target)) {
+        gtSwitch.classList.remove('is-open');
+        gtTrigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    $$('button[data-lang]', gtMenu).forEach(b => {
+      b.addEventListener('click', () => setLang(b.dataset.lang));
+    });
+  }
 
 })();
