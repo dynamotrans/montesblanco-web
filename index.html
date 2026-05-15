@@ -90,8 +90,10 @@
         </ul>
       </nav>
 
-      <!-- Selector de idiomas: SIEMPRE visible (fuera del menú hamburguesa) -->
-      <div class="nav__translate">
+      <!-- Selector de idiomas: SIEMPRE visible (fuera del menú hamburguesa)
+           translate="no" evita que GT traduzca los nombres de idiomas
+           y el código IT lo confunda con el pronombre inglés. -->
+      <div class="nav__translate notranslate" translate="no">
         <div class="gt-switch" id="gtSwitch">
           <button class="gt-trigger" id="gtTrigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Seleccionar idioma">
             <span class="gt-flag">🇪🇸</span>
