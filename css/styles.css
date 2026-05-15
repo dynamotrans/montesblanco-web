@@ -753,7 +753,7 @@ font[style*="vertical-align"] {
   flex-direction: column;
   background: var(--white);
   color: var(--text);
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: transform var(--t), box-shadow var(--t);
@@ -766,11 +766,12 @@ font[style*="vertical-align"] {
 
 .portal__brand {
   position: relative;
-  height: 160px;
+  height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 20px;
 }
 
 .portal--idealista .portal__brand {
@@ -783,8 +784,8 @@ font[style*="vertical-align"] {
 
 .portal__logo {
   display: block;
-  height: 88px;
-  max-width: 280px;
+  height: 64px;
+  max-width: 240px;
   width: auto;
   background: transparent;
   padding: 0;
@@ -800,13 +801,14 @@ font[style*="vertical-align"] {
   display: inline-block;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   font-weight: 800;
-  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  font-size: clamp(2rem, 4.5vw, 3rem);
   letter-spacing: -0.04em;
   line-height: 1;
   color: #ffffff;
   height: auto;
   max-width: none;
   background: transparent;
+  text-align: center;
 }
 
 .portal:hover .portal__logo {
@@ -1433,8 +1435,8 @@ font[style*="vertical-align"] {
   .services { gap: 16px; }
   .service { padding: 36px 24px; }
 
-  .portal__brand { height: 140px; }
-  .portal__logo { height: 76px; max-width: 260px; }
+  .portal__brand { height: 110px; padding: 16px; }
+  .portal__logo { height: 56px; max-width: 200px; }
   .portal__body { padding: 22px 24px 26px; }
   .portal h3 { font-size: 1.4rem; }
 
@@ -1512,8 +1514,8 @@ font[style*="vertical-align"] {
 
   .about__media { max-width: 100%; margin: 0 auto; }
 
-  .portal__brand { height: 128px; }
-  .portal__logo { height: 68px; max-width: 240px; }
+  .portal__brand { height: 100px; padding: 14px; }
+  .portal__logo { height: 48px; max-width: 180px; }
   .portal__body { padding: 20px 20px 24px; }
   .portal h3 { font-size: 1.3rem; }
   .portal p { font-size: 0.9rem; }
