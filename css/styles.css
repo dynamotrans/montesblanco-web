@@ -513,10 +513,10 @@ font[style*="vertical-align"] {
 
 .hero__eyebrow {
   display: inline-block;
-  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  font-size: clamp(0.85rem, 1.8vw, 1.05rem);
   font-weight: 600;
-  letter-spacing: 0.32em;
-  line-height: 1.5;
+  letter-spacing: 0.18em;
+  line-height: 1.7;
   text-transform: uppercase;
   color: var(--gold-soft);
   margin-bottom: 32px;
@@ -1615,7 +1615,7 @@ font[style*="vertical-align"] {
 
   .hero { min-height: calc(100vh - 118px); min-height: calc(100svh - 118px); align-items: flex-end; }
   .hero__content { padding: 80px 16px 22px; }
-  .hero__eyebrow { font-size: 0.92rem; letter-spacing: 0.22em; }
+  .hero__eyebrow { font-size: 0.78rem; letter-spacing: 0.12em; }
   .hero h1 { font-size: clamp(1.8rem, 9vw, 2.4rem); }
 
   .section-head h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
