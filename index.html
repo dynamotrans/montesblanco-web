@@ -33,18 +33,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap">
 
-  <!-- CSS anti-banner Google Translate -->
+  <!-- CSS anti-banner Google Translate (NUKE total) -->
   <style>
+    /* Cualquier iframe hijo directo de body es de GT (banner). Matar. */
+    body > iframe,
+    body > .skiptranslate,
     .goog-te-banner-frame,
     iframe.goog-te-banner-frame,
-    iframe.goog-te-banner-frame.skiptranslate {
+    iframe.skiptranslate {
       display: none !important;
       visibility: hidden !important;
       height: 0 !important;
+      max-height: 0 !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: absolute !important;
+      top: -10000px !important;
+      left: -10000px !important;
+      z-index: -9999 !important;
     }
     #goog-gt-tt, .goog-te-balloon-frame, .goog-tooltip { display: none !important; }
     .goog-te-gadget { display: none !important; }
-    body { top: 0 !important; position: static !important; }
+    /* Forzar el body sin offset que GT añade para el banner */
+    html, body {
+      top: 0 !important;
+      position: static !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
     .goog-text-highlight { background: none !important; box-shadow: none !important; }
     #google_translate_element { position: absolute; top: -9999px; left: -9999px; opacity: 0; pointer-events: none; }
   </style>
