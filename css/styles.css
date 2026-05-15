@@ -1235,8 +1235,8 @@ font[style*="vertical-align"] {
   position: fixed;
   bottom: 28px;
   right: 28px;
-  width: 72px;
-  height: 72px;
+  width: 92px;
+  height: 92px;
   background: #fff;
   border-radius: 50%;
   display: block;
@@ -1261,13 +1261,13 @@ font[style*="vertical-align"] {
 
 .whatsapp-fab .wa-badge {
   position: absolute;
-  right: -4px;
-  bottom: -4px;
-  width: 30px;
-  height: 30px;
+  right: -2px;
+  bottom: -2px;
+  width: 36px;
+  height: 36px;
   background: #25d366;
   color: #fff;
-  border: 2px solid #fff;
+  border: 3px solid #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1275,7 +1275,7 @@ font[style*="vertical-align"] {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.whatsapp-fab .wa-badge svg { width: 16px; height: 16px; }
+.whatsapp-fab .wa-badge svg { width: 20px; height: 20px; }
 
 /* ---------- LEGAL PAGES ---------- */
 .legal {
@@ -1483,13 +1483,13 @@ font[style*="vertical-align"] {
   }
 
   .whatsapp-fab {
-    width: 64px;
-    height: 64px;
+    width: 78px;
+    height: 78px;
     bottom: 20px;
     right: 20px;
   }
-  .whatsapp-fab .wa-badge { width: 26px; height: 26px; right: -3px; bottom: -3px; }
-  .whatsapp-fab .wa-badge svg { width: 14px; height: 14px; }
+  .whatsapp-fab .wa-badge { width: 30px; height: 30px; right: -2px; bottom: -2px; }
+  .whatsapp-fab .wa-badge svg { width: 16px; height: 16px; }
 }
 
 @media (max-width: 480px) {
