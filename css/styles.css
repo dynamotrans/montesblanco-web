@@ -1479,7 +1479,8 @@ font[style*="vertical-align"] {
 
   .footer__bottom {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .whatsapp-fab {
