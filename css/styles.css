@@ -890,9 +890,10 @@ font[style*="vertical-align"] {
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   align-items: center;
-  gap: 20px;
   width: max-content;
-  animation: partners-scroll 14s linear infinite;
+  animation: partners-scroll 18s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 .partners__marquee:hover .partners__track {
   animation-play-state: paused;
@@ -900,9 +901,9 @@ font[style*="vertical-align"] {
 
 .partner {
   flex: 0 0 auto;
-  height: 52px;
-  min-width: 90px;
-  padding: 0 6px;
+  height: 72px;
+  min-width: 120px;
+  padding: 0 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -913,7 +914,7 @@ font[style*="vertical-align"] {
 .partner:hover { filter: grayscale(0); opacity: 1; }
 .partner img {
   max-height: 100%;
-  max-width: 140px;
+  max-width: 200px;
   width: auto;
   object-fit: contain;
 }
@@ -1466,9 +1467,8 @@ font[style*="vertical-align"] {
     z-index: 1;
   }
 
-  .partner { height: 58px; min-width: 70px; padding: 0 2px; }
-  .partner img { max-width: 130px; }
-  .partners__track { gap: 6px; }
+  .partner { height: 78px; min-width: 95px; padding: 0 8px; }
+  .partner img { max-width: 180px; }
   .partners { padding: 18px 0; }
   .partners__title { font-size: 0.62rem; margin-bottom: 14px; }
 
@@ -1522,8 +1522,8 @@ font[style*="vertical-align"] {
   }
   .visit-map iframe { height: 260px; }
 
-  .partner { height: 54px; min-width: 64px; }
-  .partner img { max-width: 120px; }
+  .partner { height: 74px; min-width: 88px; padding: 0 6px; }
+  .partner img { max-width: 170px; }
   .partner__name { font-size: 1rem; }
   .partners { padding: 14px 0; }
   .partners__title { margin-bottom: 10px; }
