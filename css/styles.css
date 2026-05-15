@@ -481,11 +481,14 @@ font[style*="vertical-align"] {
 
 .hero__eyebrow {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
   letter-spacing: 0.4em;
+  line-height: 1.6;
   text-transform: uppercase;
   color: var(--gold-soft);
   margin-bottom: 28px;
+  text-align: center;
   opacity: 0;
   animation: rise .9s .2s forwards;
 }
