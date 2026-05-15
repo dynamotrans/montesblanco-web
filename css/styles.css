@@ -518,6 +518,13 @@ font[style*="vertical-align"] {
   animation: rise 1s .6s forwards;
 }
 
+.hero__lead strong {
+  color: var(--gold-soft);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
 .hero__actions {
   margin-top: 44px;
   display: flex;
