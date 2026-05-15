@@ -155,20 +155,58 @@
     }
   };
 
+  // Trigger Google Translate IN-PLACE via su <select> oculto (sin recargar)
+  const doTranslate = (code) => {
+    const sel = document.querySelector('.goog-te-combo');
+    if (!sel) return false;
+    sel.value = code;
+    sel.dispatchEvent(new Event('change'));
+    return true;
+  };
+
   const setLang = (code) => {
     const host = location.hostname;
-    document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+
+    // Limpiar cookie googtrans en todas las variantes de dominio
+    const clearCookie = (extra) => {
+      document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT' +
+        (extra ? '; ' + extra : '');
+    };
+    clearCookie('');
     if (host) {
-      document.cookie = 'googtrans=; path=/; domain=.' + host + '; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-      document.cookie = 'googtrans=; path=/; domain=' + host + '; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      clearCookie('domain=.' + host);
+      clearCookie('domain=' + host);
     }
-    if (code && code !== 'es') {
-      document.cookie = 'googtrans=/auto/' + code + ';path=/';
-      if (host) {
-        document.cookie = 'googtrans=/auto/' + code + ';path=/;domain=.' + host;
-      }
+
+    // Reset a español: GT no puede deshacer una traducción sin recargar
+    if (!code || code === 'es') {
+      setLangLabel('es');
+      location.reload();
+      return;
     }
-    location.reload();
+
+    // Persistir cookie para próxima visita (formato /source/target)
+    const value = '/es/' + code;
+    document.cookie = 'googtrans=' + value + '; path=/';
+    if (host) {
+      document.cookie = 'googtrans=' + value + '; path=/; domain=' + host;
+      document.cookie = 'googtrans=' + value + '; path=/; domain=.' + host;
+    }
+
+    // Sincronizar atributos del <html> para que Chrome no ofrezca traducir
+    document.documentElement.lang = code;
+    document.documentElement.dir = code === 'ar' ? 'rtl' : 'ltr';
+
+    setLangLabel(code);
+
+    // Traducir IN-PLACE — sin recargar (este es el truco que evita ver el banner)
+    if (doTranslate(code)) return;
+
+    // GT aún no listo: polling hasta 10s
+    let attempts = 0;
+    const poll = setInterval(() => {
+      if (doTranslate(code) || ++attempts > 40) clearInterval(poll);
+    }, 250);
   };
 
   if (gtTrigger && gtMenu && gtSwitch) {
