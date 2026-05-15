@@ -105,17 +105,25 @@
 
   /* ============== HERO VIDEO → FADE A IMAGEN ============== */
   const heroVideo = $('#heroVideo');
+  const heroFallback = $('.hero__img-fallback');
   if (heroVideo) {
-    heroVideo.addEventListener('ended', () => {
+    const switchToImage = () => {
       heroVideo.classList.add('is-ended');
+      if (heroFallback) heroFallback.classList.add('is-visible');
+    };
+    heroVideo.addEventListener('ended', switchToImage);
+    // Si el video falla, mostramos la imagen inmediatamente
+    heroVideo.addEventListener('error', () => {
+      if (heroFallback) {
+        heroFallback.style.transitionDuration = '0s';
+        heroFallback.classList.add('is-visible');
+      }
     });
-    // Fallback: si por algún motivo el evento 'ended' no salta
-    // (algunos navegadores móviles con autoplay restringido),
-    // forzamos fade después de la duración del video + 0.5s
+    // Fallback temporizado por si el evento 'ended' no salta
     heroVideo.addEventListener('loadedmetadata', () => {
       const dur = heroVideo.duration;
       if (isFinite(dur) && dur > 0) {
-        setTimeout(() => heroVideo.classList.add('is-ended'), (dur + 0.5) * 1000);
+        setTimeout(switchToImage, (dur + 0.5) * 1000);
       }
     });
   }
