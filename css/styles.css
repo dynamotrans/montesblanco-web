@@ -659,14 +659,24 @@ font[style*="vertical-align"] {
   100% { top: 100%; }
 }
 
-/* En escritorio: altura FIJA del hero = pantalla − navbar − franja de
-   logos, con contenido centrado y recortado si hiciera falta, para que
-   el carrusel de logotipos quede SIEMPRE pegado al pie, sin cortarse */
+/* En escritorio: hero + carrusel de logos forman UNA pantalla exacta.
+   El contenedor mide justo el alto visible; el carrusel ocupa su alto
+   natural pegado abajo y el hero se estira para rellenar el resto.
+   Sin números mágicos: el carrusel nunca se corta ni deja hueco. */
 @media (min-width: 769px) {
-  .hero {
-    height: calc(100vh - var(--nav-h) - 210px);
-    height: calc(100svh - var(--nav-h) - 210px);
-    min-height: 460px;
+  .hero-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    height: 100svh;
+  }
+  .hero-screen .hero {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+  }
+  .hero-screen .partners {
+    flex: 0 0 auto;
   }
   .hero__content {
     padding: 72px 24px 28px;
