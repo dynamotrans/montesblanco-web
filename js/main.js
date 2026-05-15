@@ -30,6 +30,39 @@
   const $  = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+  /* ============== KILL GOOGLE TRANSLATE BANNER ==============
+     GT injects an iframe.skiptranslate banner al traducir y mueve
+     body con style="top: 40px". El CSS solo a veces lo atrapa,
+     así que también lo limpiamos vía JS con un MutationObserver. */
+  const killGtBanner = () => {
+    document.querySelectorAll(
+      'iframe.goog-te-banner-frame, .goog-te-banner-frame, .goog-te-banner-frame.skiptranslate, .skiptranslate > iframe'
+    ).forEach(el => { try { el.remove(); } catch (_) {} });
+    // Reset inline top que GT pone en <body> y <html>
+    if (document.body && document.body.style.top) document.body.style.top = '';
+    if (document.documentElement && document.documentElement.style.top) {
+      document.documentElement.style.top = '';
+    }
+  };
+
+  // Observer permanente: si el banner reaparece, lo quitamos
+  const gtObserver = new MutationObserver(killGtBanner);
+  const startGtObserver = () => {
+    if (document.body) gtObserver.observe(document.body, { childList: true, subtree: false });
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startGtObserver);
+  } else {
+    startGtObserver();
+  }
+
+  // Polling defensivo durante los primeros 4s (por si GT carga muy tarde)
+  let gtTicks = 0;
+  const gtInterval = setInterval(() => {
+    killGtBanner();
+    if (++gtTicks > 80) clearInterval(gtInterval);
+  }, 50);
+
   /* ============== NAVBAR ============== */
   const nav = $('#nav');
   const navToggle = $('#navToggle');
