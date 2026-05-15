@@ -758,12 +758,9 @@ font[style*="vertical-align"] {
   overflow: hidden;
 }
 
-.portal--idealista .portal__brand {
-  background: linear-gradient(135deg, #009577 0%, #006b54 100%);
-}
-
+.portal--idealista .portal__brand,
 .portal--fotocasa .portal__brand {
-  background: linear-gradient(135deg, #d62418 0%, #9f1810 100%);
+  background: linear-gradient(135deg, #002349 0%, #001a36 100%);
 }
 
 .portal__logo {
