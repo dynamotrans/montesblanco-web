@@ -107,23 +107,29 @@
   const heroVideo = $('#heroVideo');
   const heroFallback = $('.hero__img-fallback');
   if (heroVideo) {
+    let switched = false;
     const switchToImage = () => {
+      if (switched) return;
+      switched = true;
       heroVideo.classList.add('is-ended');
       if (heroFallback) heroFallback.classList.add('is-visible');
     };
+    // Iniciar el crossfade 2.5s ANTES de que el video acabe, así
+    // la transición ocurre con el video AÚN en movimiento y nunca
+    // se ve el último frame congelado (brusco)
+    heroVideo.addEventListener('timeupdate', () => {
+      const d = heroVideo.duration;
+      if (isFinite(d) && d > 0 && heroVideo.currentTime >= d - 2.6) {
+        switchToImage();
+      }
+    });
+    // Por si timeupdate no llega a disparar (video muy corto, etc.)
     heroVideo.addEventListener('ended', switchToImage);
     // Si el video falla, mostramos la imagen inmediatamente
     heroVideo.addEventListener('error', () => {
       if (heroFallback) {
         heroFallback.style.transitionDuration = '0s';
         heroFallback.classList.add('is-visible');
-      }
-    });
-    // Fallback temporizado por si el evento 'ended' no salta
-    heroVideo.addEventListener('loadedmetadata', () => {
-      const dur = heroVideo.duration;
-      if (isFinite(dur) && dur > 0) {
-        setTimeout(switchToImage, (dur + 0.5) * 1000);
       }
     });
   }
