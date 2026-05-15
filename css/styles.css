@@ -441,8 +441,8 @@ font[style*="vertical-align"] {
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
-  min-height: 82vh;
-  min-height: 82svh;
+  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100svh - var(--nav-h));
   display: flex;
   align-items: center;
   justify-content: center;
