@@ -766,7 +766,7 @@ font[style*="vertical-align"] {
 
 .portal__brand {
   position: relative;
-  height: 130px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -780,8 +780,8 @@ font[style*="vertical-align"] {
 
 .portal__logo {
   display: block;
-  height: 58px;
-  max-width: 220px;
+  height: 88px;
+  max-width: 280px;
   width: auto;
   background: var(--white);
   padding: 10px 24px;
@@ -1389,8 +1389,8 @@ font[style*="vertical-align"] {
   .services { gap: 16px; }
   .service { padding: 36px 24px; }
 
-  .portal__brand { height: 110px; }
-  .portal__logo { height: 50px; padding: 8px 18px; }
+  .portal__brand { height: 140px; }
+  .portal__logo { height: 76px; padding: 10px 20px; max-width: 260px; }
   .portal__body { padding: 22px 24px 26px; }
   .portal h3 { font-size: 1.4rem; }
 
@@ -1467,8 +1467,8 @@ font[style*="vertical-align"] {
 
   .about__media { max-width: 100%; margin: 0 auto; }
 
-  .portal__brand { height: 100px; }
-  .portal__logo { height: 44px; padding: 7px 16px; max-width: 180px; }
+  .portal__brand { height: 128px; }
+  .portal__logo { height: 68px; padding: 9px 18px; max-width: 240px; }
   .portal__body { padding: 20px 20px 24px; }
   .portal h3 { font-size: 1.3rem; }
   .portal p { font-size: 0.9rem; }
