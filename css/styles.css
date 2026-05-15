@@ -441,8 +441,10 @@ font[style*="vertical-align"] {
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
-  min-height: calc(100vh - var(--nav-h));
-  min-height: calc(100svh - var(--nav-h));
+  /* Alto = pantalla visible − navbar − franja de logotipos (partners),
+     para que el carrusel de logos quede justo pegado al pie, igual que en móvil */
+  min-height: calc(100vh - var(--nav-h) - 210px);
+  min-height: calc(100svh - var(--nav-h) - 210px);
   display: flex;
   align-items: center;
   justify-content: center;
