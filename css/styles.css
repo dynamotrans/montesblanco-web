@@ -1144,7 +1144,7 @@ font[style*="vertical-align"] {
 
 /* ---------- FOOTER ---------- */
 .footer {
-  background: var(--navy-deep);
+  background: #002349;
   color: rgba(255, 255, 255, 0.72);
   padding: 80px 0 32px;
   font-size: 0.9rem;
@@ -1163,7 +1163,7 @@ font[style*="vertical-align"] {
   width: auto;
   max-width: 240px;
   margin-bottom: 20px;
-  background: var(--navy-deep);
+  background: #002349;
 }
 
 .footer__about {
