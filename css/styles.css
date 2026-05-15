@@ -1344,27 +1344,7 @@ font[style*="vertical-align"] {
   .nav__menu a { font-size: 1rem; display: inline-block; }
 
   .nav__translate { justify-content: flex-start; }
-  .gt-menu {
-    left: 0;
-    right: auto;
-    min-width: 280px;
-    width: calc(100vw - 60px);
-    max-width: 360px;
-  }
-  .gt-menu button { padding: 14px 18px; font-size: 1rem; }
-
-  /* Logo un pelín menor que el nav-h para no sobresalir */
-  .nav__brand-logo { height: 72px; }
-  .nav.is-scrolled .nav__brand-logo { height: 60px; }
-
-  /* Foto Manolo: ancho completo (rompe padding del container) y pegada arriba */
-  #about.section { padding-top: 32px; }
-  .about__media {
-    max-width: none;
-    margin: 0 -24px;
-    width: calc(100% + 48px);
-  }
-  .about__media img { border-radius: 0; box-shadow: none; }
+  .gt-menu { left: 0; right: auto; min-width: 220px; }
 
   .nav__cta { display: none; }
   .nav__menu .nav__cta {
@@ -1384,8 +1364,7 @@ font[style*="vertical-align"] {
   .hero__actions .btn { justify-content: center; }
   .hero__scroll { display: none; }
 
-  .about__media { max-width: none; margin: 0; }
-  .about__media img { border-radius: 0; box-shadow: none; }
+  .about__media { max-width: 480px; }
 
   .services { gap: 16px; }
   .service { padding: 36px 24px; }
@@ -1465,7 +1444,7 @@ font[style*="vertical-align"] {
 
   .section-head h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
 
-  .about__media { max-width: none; margin: 0; }
+  .about__media { max-width: 280px; }
 
   .portal__brand { height: 100px; }
   .portal__logo { height: 44px; padding: 7px 16px; max-width: 180px; }
