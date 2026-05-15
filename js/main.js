@@ -31,26 +31,40 @@
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   /* ============== KILL GOOGLE TRANSLATE BANNER ==============
-     GT injects an iframe.skiptranslate banner al traducir y mueve
-     body con style="top: 40px". El CSS solo a veces lo atrapa,
-     así que también lo limpiamos vía JS con un MutationObserver. */
+     GT injects an iframe.skiptranslate banner al traducir y empuja
+     body con style="top: 40px". Combinamos CSS inline (head) + JS
+     defensivo para esconder el banner SIN romper la traducción. */
   const killGtBanner = () => {
-    // Solo escondemos el banner — NO lo eliminamos (Google a veces lo recrea
-    // y, peor, si tocamos otros iframes con .skiptranslate, rompemos la
-    // traducción). Hide + reset body.top es suficiente.
-    document.querySelectorAll('.goog-te-banner-frame').forEach(el => {
-      el.style.display = 'none';
-      el.style.visibility = 'hidden';
-      el.style.height = '0';
+    // Forzar el iframe del banner a desaparecer (sin removerlo: GT lo recrea)
+    document.querySelectorAll(
+      '.goog-te-banner-frame, iframe.goog-te-banner-frame'
+    ).forEach(el => {
+      el.style.cssText =
+        'display:none!important;visibility:hidden!important;height:0!important;' +
+        'opacity:0!important;pointer-events:none!important;' +
+        'position:absolute!important;top:-10000px!important;left:-10000px!important;';
     });
-    // Reset inline top que GT pone en <body> para hacer hueco al banner
-    if (document.body && document.body.style.top) document.body.style.top = '';
+    // Reset inline top que GT pone en body para hacer hueco al banner
+    if (document.body) {
+      if (document.body.style.top) document.body.style.top = '';
+      if (document.body.style.position === 'relative') document.body.style.position = '';
+    }
+    if (document.documentElement && document.documentElement.style.top) {
+      document.documentElement.style.top = '';
+    }
   };
 
-  // Observer permanente: si el banner reaparece, lo quitamos
+  // Observer permanente sobre body: pilla añadidos, eliminados Y cambios de
+  // estilo en iframes que GT modifica
   const gtObserver = new MutationObserver(killGtBanner);
   const startGtObserver = () => {
-    if (document.body) gtObserver.observe(document.body, { childList: true, subtree: false });
+    if (!document.body) return;
+    gtObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['style', 'class']
+    });
   };
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', startGtObserver);
@@ -58,12 +72,8 @@
     startGtObserver();
   }
 
-  // Polling defensivo durante los primeros 4s (por si GT carga muy tarde)
-  let gtTicks = 0;
-  const gtInterval = setInterval(() => {
-    killGtBanner();
-    if (++gtTicks > 80) clearInterval(gtInterval);
-  }, 50);
+  // Polling permanente cada 200ms (coste despreciable, atrapa cualquier caso raro)
+  setInterval(killGtBanner, 200);
 
   /* ============== NAVBAR ============== */
   const nav = $('#nav');
