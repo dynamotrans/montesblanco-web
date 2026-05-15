@@ -512,31 +512,69 @@ font[style*="vertical-align"] {
 }
 
 .hero__eyebrow {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  text-transform: uppercase;
-  color: var(--gold-soft);
-  margin-bottom: 32px;
+  gap: 16px;
+  padding: clamp(22px, 4vw, 36px) clamp(32px, 7vw, 72px);
+  border: 1px solid rgba(200, 164, 92, 0.40);
+  background: rgba(8, 23, 48, 0.28);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  margin-bottom: 36px;
   text-align: center;
   opacity: 0;
   animation: rise .9s .2s forwards;
+  position: relative;
+}
+
+/* Pequeños acentos en las esquinas para toque boutique */
+.hero__eyebrow::before,
+.hero__eyebrow::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--gold);
+  border-style: solid;
+  border-width: 0;
+}
+.hero__eyebrow::before {
+  top: -1px;
+  left: -1px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+.hero__eyebrow::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
 }
 
 .hero__eyebrow-main {
-  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  line-height: 1.2;
-  color: var(--gold);
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 4.6vw, 3.4rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: var(--white);
+}
+
+.hero__eyebrow-line {
+  width: 56px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.75;
 }
 
 .hero__eyebrow-sub {
-  font-size: clamp(0.72rem, 1.3vw, 0.85rem);
+  font-family: var(--sans);
+  font-size: clamp(0.68rem, 1.2vw, 0.82rem);
   font-weight: 500;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.36em;
   line-height: 1.2;
+  text-transform: uppercase;
   color: var(--gold-soft);
 }
 
@@ -1620,8 +1658,10 @@ font[style*="vertical-align"] {
 
   .hero { min-height: calc(100vh - 118px); min-height: calc(100svh - 118px); align-items: flex-end; }
   .hero__content { padding: 80px 16px 22px; }
-  .hero__eyebrow-main { font-size: 1.3rem; letter-spacing: 0.1em; }
-  .hero__eyebrow-sub { font-size: 0.72rem; letter-spacing: 0.24em; }
+  .hero__eyebrow { gap: 12px; }
+  .hero__eyebrow-main { font-size: clamp(1.7rem, 7vw, 2.3rem); }
+  .hero__eyebrow-sub { font-size: 0.68rem; letter-spacing: 0.28em; }
+  .hero__eyebrow-line { width: 44px; }
   .hero__spacer { height: clamp(20px, 4vh, 44px); }
 
   .section-head h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
