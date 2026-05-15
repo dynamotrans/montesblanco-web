@@ -103,6 +103,23 @@
     });
   });
 
+  /* ============== HERO VIDEO → FADE A IMAGEN ============== */
+  const heroVideo = $('#heroVideo');
+  if (heroVideo) {
+    heroVideo.addEventListener('ended', () => {
+      heroVideo.classList.add('is-ended');
+    });
+    // Fallback: si por algún motivo el evento 'ended' no salta
+    // (algunos navegadores móviles con autoplay restringido),
+    // forzamos fade después de la duración del video + 0.5s
+    heroVideo.addEventListener('loadedmetadata', () => {
+      const dur = heroVideo.duration;
+      if (isFinite(dur) && dur > 0) {
+        setTimeout(() => heroVideo.classList.add('is-ended'), (dur + 0.5) * 1000);
+      }
+    });
+  }
+
   /* ============== BACK TO TOP ============== */
   const backToTop = $('#backToTop');
   if (backToTop) {

@@ -477,6 +477,15 @@ font[style*="vertical-align"] {
    debajo. El video la cubre 100% via object-fit: cover */
 .hero__media video {
   z-index: 1;
+  opacity: 1;
+  transition: opacity 2.5s ease-in-out;
+}
+
+/* Cuando el video termina, JS añade .is-ended y el fade-out
+   revela la imagen estática que sigue zoomeando suavemente */
+.hero__media video.is-ended {
+  opacity: 0;
+  pointer-events: none;
 }
 
 @keyframes heroZoom {
