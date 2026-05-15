@@ -864,7 +864,7 @@ font[style*="vertical-align"] {
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   align-items: center;
-  gap: 48px;
+  gap: 20px;
   width: max-content;
   animation: partners-scroll 38s linear infinite;
 }
@@ -875,8 +875,8 @@ font[style*="vertical-align"] {
 .partner {
   flex: 0 0 auto;
   height: 52px;
-  min-width: 130px;
-  padding: 0 12px;
+  min-width: 90px;
+  padding: 0 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1411,8 +1411,8 @@ font[style*="vertical-align"] {
     z-index: 1;
   }
 
-  .partner { height: 44px; min-width: 110px; padding: 0 10px; }
-  .partners__track { gap: 32px; }
+  .partner { height: 44px; min-width: 80px; padding: 0 4px; }
+  .partners__track { gap: 14px; }
   .partners { padding: 18px 0; }
   .partners__title { font-size: 0.62rem; margin-bottom: 14px; }
 
