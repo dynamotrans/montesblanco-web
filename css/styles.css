@@ -460,10 +460,23 @@ font[style*="vertical-align"] {
 
 .hero__media img,
 .hero__media video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Animación de zoom solo en la imagen fallback (el video ya tiene
+   movimiento propio, no necesita zoom artificial) */
+.hero__media .hero__img-fallback {
   animation: heroZoom 22s ease-in-out infinite alternate;
+}
+
+/* Si el video carga y se reproduce, la imagen fallback queda
+   debajo. El video la cubre 100% via object-fit: cover */
+.hero__media video {
+  z-index: 1;
 }
 
 @keyframes heroZoom {
