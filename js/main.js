@@ -199,14 +199,32 @@
 
     setLangLabel(code);
 
-    // Traducir IN-PLACE — sin recargar (este es el truco que evita ver el banner)
-    if (doTranslate(code)) return;
+    // Intento 1: traducir in-place inmediato
+    let translated = doTranslate(code);
 
-    // GT aún no listo: polling hasta 10s
+    // Polling 1.5s: reintentar por si GT aún no ha creado el combo
     let attempts = 0;
     const poll = setInterval(() => {
-      if (doTranslate(code) || ++attempts > 40) clearInterval(poll);
+      if (translated || doTranslate(code)) {
+        translated = true;
+        clearInterval(poll);
+      } else if (++attempts > 6) {
+        // Fallback: si en 1.5s no traduce, recargamos. La cookie está
+        // ya fijada → al recargar GT traduce automáticamente y nuestro
+        // CSS+JS mata el banner. Igual que dynamo.
+        clearInterval(poll);
+        if (!translated) location.reload();
+      }
     }, 250);
+
+    // Verificación: si in-place "funcionó" pero <html> no recibe la clase
+    // translated-ltr en 1.5s, GT realmente no tradujo → recargar
+    setTimeout(() => {
+      if (!document.documentElement.classList.contains('translated-ltr') &&
+          !document.documentElement.classList.contains('translated-rtl')) {
+        location.reload();
+      }
+    }, 1500);
   };
 
   if (gtTrigger && gtMenu && gtSwitch) {
