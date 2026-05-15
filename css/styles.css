@@ -774,12 +774,11 @@ font[style*="vertical-align"] {
 }
 
 .portal--idealista .portal__brand {
-  background: #cdf73c;
+  background: #e1f56f;
 }
 
 .portal--fotocasa .portal__brand {
-  background: #ffffff;
-  border-bottom: 1px solid var(--line);
+  background: #002349;
 }
 
 .portal__logo {
@@ -793,6 +792,13 @@ font[style*="vertical-align"] {
   object-fit: contain;
   box-shadow: none;
   transition: transform var(--t);
+}
+
+/* Fotocasa: el JPG es azul sobre blanco. Convertimos a blanco sobre transparente
+   con filter (grayscale + contrast + invert) y luego screen para descartar el fondo */
+.portal--fotocasa .portal__logo {
+  filter: grayscale(1) contrast(100) invert(1);
+  mix-blend-mode: screen;
 }
 
 .portal:hover .portal__logo {
