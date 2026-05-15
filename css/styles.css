@@ -1037,8 +1037,10 @@ font[style*="vertical-align"] {
 
 .contact-info--center { text-align: center; }
 .contact-info--center .eyebrow { margin-left: auto; margin-right: auto; }
-.contact-info--center .contact-list { max-width: 540px; margin: 0 auto; }
-.contact-info--center .contact-list li { justify-content: flex-start; }
+.contact-info--center .contact-list { max-width: 540px; margin: 0 auto; text-align: left; }
+.contact-info--center .contact-list li { justify-content: flex-start; text-align: left; }
+.contact-info--center .contact-list a,
+.contact-info--center .contact-list span { text-align: left; }
 
 .contact-info .lead {
   color: rgba(248, 245, 240, 0.8);
