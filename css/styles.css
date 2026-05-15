@@ -1157,19 +1157,13 @@ font[style*="vertical-align"] {
   margin-bottom: 56px;
 }
 
-.footer__brand-mark {
-  font-family: var(--serif);
-  font-size: 1.6rem;
-  color: var(--white);
-  margin-bottom: 6px;
-}
-
-.footer__brand-sub {
-  font-size: 0.7rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--gold);
+.footer__brand-logo {
+  display: block;
+  height: 72px;
+  width: auto;
+  max-width: 240px;
   margin-bottom: 20px;
+  background: var(--navy-deep);
 }
 
 .footer__about {
