@@ -794,11 +794,19 @@ font[style*="vertical-align"] {
   transition: transform var(--t);
 }
 
-/* Fotocasa: el JPG es azul sobre blanco. Convertimos a blanco sobre transparente
-   con filter (grayscale + contrast + invert) y luego screen para descartar el fondo */
-.portal--fotocasa .portal__logo {
-  filter: grayscale(1) contrast(100) invert(1);
-  mix-blend-mode: screen;
+/* Fotocasa: renderizamos 'fotocasa' como texto HTML para garantizar
+   blanco 100% puro sobre el azul #2d39af sin compresión JPEG */
+.portal__logo--text {
+  display: inline-block;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #ffffff;
+  height: auto;
+  max-width: none;
+  background: transparent;
 }
 
 .portal:hover .portal__logo {
