@@ -1364,7 +1364,7 @@ font[style*="vertical-align"] {
   .hero__actions .btn { justify-content: center; }
   .hero__scroll { display: none; }
 
-  .about__media { max-width: 320px; }
+  .about__media { max-width: 100%; margin: 0 auto; }
 
   .services { gap: 16px; }
   .service { padding: 36px 24px; }
@@ -1444,7 +1444,7 @@ font[style*="vertical-align"] {
 
   .section-head h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
 
-  .about__media { max-width: 280px; }
+  .about__media { max-width: 100%; margin: 0 auto; }
 
   .portal__brand { height: 100px; }
   .portal__logo { height: 44px; padding: 7px 16px; max-width: 180px; }
