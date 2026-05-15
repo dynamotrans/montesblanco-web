@@ -512,17 +512,32 @@ font[style*="vertical-align"] {
 }
 
 .hero__eyebrow {
-  display: inline-block;
-  font-size: clamp(0.85rem, 1.8vw, 1.05rem);
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   text-transform: uppercase;
   color: var(--gold-soft);
   margin-bottom: 32px;
   text-align: center;
   opacity: 0;
   animation: rise .9s .2s forwards;
+}
+
+.hero__eyebrow-main {
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  color: var(--gold);
+}
+
+.hero__eyebrow-sub {
+  font-size: clamp(0.72rem, 1.3vw, 0.85rem);
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  line-height: 1.2;
+  color: var(--gold-soft);
 }
 
 .hero h1 {
@@ -1615,7 +1630,8 @@ font[style*="vertical-align"] {
 
   .hero { min-height: calc(100vh - 118px); min-height: calc(100svh - 118px); align-items: flex-end; }
   .hero__content { padding: 80px 16px 22px; }
-  .hero__eyebrow { font-size: 0.78rem; letter-spacing: 0.12em; }
+  .hero__eyebrow-main { font-size: 1.3rem; letter-spacing: 0.1em; }
+  .hero__eyebrow-sub { font-size: 0.72rem; letter-spacing: 0.24em; }
   .hero h1 { font-size: clamp(1.8rem, 9vw, 2.4rem); }
 
   .section-head h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
