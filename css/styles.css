@@ -1411,8 +1411,9 @@ font[style*="vertical-align"] {
     z-index: 1;
   }
 
-  .partner { height: 44px; min-width: 80px; padding: 0 4px; }
-  .partners__track { gap: 14px; }
+  .partner { height: 58px; min-width: 70px; padding: 0 2px; }
+  .partner img { max-width: 130px; }
+  .partners__track { gap: 6px; }
   .partners { padding: 18px 0; }
   .partners__title { font-size: 0.62rem; margin-bottom: 14px; }
 
@@ -1464,8 +1465,8 @@ font[style*="vertical-align"] {
   }
   .visit-map iframe { height: 260px; }
 
-  .partner { height: 40px; min-width: 96px; }
-  .partner img { max-width: 110px; }
+  .partner { height: 54px; min-width: 64px; }
+  .partner img { max-width: 120px; }
   .partner__name { font-size: 1rem; }
   .partners { padding: 14px 0; }
   .partners__title { margin-bottom: 10px; }
