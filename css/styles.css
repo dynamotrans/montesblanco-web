@@ -918,6 +918,19 @@ font[style*="vertical-align"] {
   width: auto;
   object-fit: contain;
 }
+
+/* Ajustes individuales: balancear el tamaño visual de cada logo
+   ya que cada JPG tiene proporciones internas distintas (padding,
+   aspect ratio) que hacen que el mismo height visual sea diferente */
+.partner img[src*="SANTANDER"],
+.partner img[src*="NEINOR"] {
+  transform: scale(1.3);
+}
+.partner img[src*="SOLVIA"],
+.partner img[src*="CAIXA"],
+.partner img[src*="BASICO"] {
+  transform: scale(0.78);
+}
 .partner__name {
   font-family: var(--serif);
   font-size: 1.15rem;
