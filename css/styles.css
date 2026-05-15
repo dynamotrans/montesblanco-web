@@ -1337,17 +1337,77 @@ font[style*="vertical-align"] {
 }
 
 /* ---------- WHATSAPP FAB ---------- */
-.whatsapp-fab {
+/* Stack flotante: foto de Manolo + menú de canales que despliega */
+.fab-stack {
   position: fixed;
   bottom: 28px;
   right: 28px;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.fab-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.fab-item {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(13, 35, 64, 0.28);
+  opacity: 0;
+  transform: scale(0.3) translateY(24px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1);
+}
+.fab-stack.is-open .fab-item {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+/* Aparición escalonada de abajo (más cerca de Manolo) hacia arriba */
+.fab-stack.is-open .fab-item:nth-last-child(1) { transition-delay: .02s; }
+.fab-stack.is-open .fab-item:nth-last-child(2) { transition-delay: .06s; }
+.fab-stack.is-open .fab-item:nth-last-child(3) { transition-delay: .10s; }
+.fab-stack.is-open .fab-item:nth-last-child(4) { transition-delay: .14s; }
+.fab-stack.is-open .fab-item:nth-last-child(5) { transition-delay: .18s; }
+.fab-item:hover { transform: scale(1.1); }
+.fab-stack.is-open .fab-item:hover { transform: scale(1.1) translateY(0); }
+.fab-item svg { width: 22px; height: 22px; }
+
+.fab-item--wa { background: #25d366; }
+.fab-item--email { background: var(--gold-dark); }
+.fab-item--ig { background: linear-gradient(135deg, #feda75, #d62976 50%, #4f5bd5); }
+.fab-item--fb { background: #1877f2; }
+.fab-item--idealista { background: #e1f56f; color: #1a1a1a; }
+.fab-item__txt {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.whatsapp-fab {
+  position: relative;
   width: 92px;
   height: 92px;
   background: #fff;
+  border: 0;
+  padding: 0;
   border-radius: 50%;
   display: block;
+  cursor: pointer;
   box-shadow: 0 10px 28px rgba(13, 35, 64, 0.28), 0 0 0 3px rgba(37, 211, 102, 0.95);
-  z-index: 90;
   transition: transform var(--t), box-shadow var(--t);
   overflow: visible;
 }
@@ -1355,6 +1415,10 @@ font[style*="vertical-align"] {
 .whatsapp-fab:hover {
   transform: scale(1.06);
   box-shadow: 0 14px 32px rgba(13, 35, 64, 0.35), 0 0 0 3px #25d366;
+}
+
+.fab-stack.is-open .whatsapp-fab {
+  box-shadow: 0 14px 32px rgba(13, 35, 64, 0.4), 0 0 0 3px var(--gold);
 }
 
 .whatsapp-fab .wa-avatar {
@@ -1409,6 +1473,14 @@ font[style*="vertical-align"] {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+/* Mientras el menú FAB está abierto, ocultamos el botón 'volver
+   arriba' para que no choque visualmente con los canales */
+body:has(.fab-stack.is-open) .back-to-top {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 .back-to-top:hover {
   background: var(--gold);
@@ -1629,14 +1701,16 @@ font[style*="vertical-align"] {
     text-align: left;
   }
 
+  .fab-stack { bottom: 20px; right: 20px; gap: 12px; }
   .whatsapp-fab {
-    width: 78px;
-    height: 78px;
-    bottom: 20px;
-    right: 20px;
+    width: 72px;
+    height: 72px;
   }
-  .whatsapp-fab .wa-badge { width: 30px; height: 30px; right: -2px; bottom: -2px; }
-  .whatsapp-fab .wa-badge svg { width: 16px; height: 16px; }
+  .whatsapp-fab .wa-badge { width: 28px; height: 28px; right: -2px; bottom: -2px; }
+  .whatsapp-fab .wa-badge svg { width: 15px; height: 15px; }
+  .fab-item { width: 46px; height: 46px; }
+  .fab-item svg { width: 20px; height: 20px; }
+  .fab-item__txt { font-size: 0.95rem; }
 
   .back-to-top {
     bottom: 112px;

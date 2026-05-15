@@ -66,7 +66,7 @@
   </style>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=20260516u">
+  <link rel="stylesheet" href="css/styles.css?v=20260516v">
 </head>
 <body>
 
@@ -446,13 +446,32 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
   </button>
 
-  <!-- FAB de WhatsApp con foto de Manolo (Director Comercial) -->
-  <a class="whatsapp-fab" id="waFab" href="https://wa.me/34635643827?text=Hola%2C%20le%20escribo%20desde%20la%20web%20de%20Montes%20Blanco%20Real%20Estate%3A" target="_blank" rel="noopener" aria-label="Hablar con Manolo por WhatsApp">
-    <img class="wa-avatar" src="images/MANOLO-CIRCULAR-BLANCO.jpg" alt="Manolo Montes" loading="lazy">
-    <span class="wa-badge" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0c3.2 0 6.2 1.247 8.413 3.488a11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l.6.953-1.005 3.668 3.764-.985.62.005zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.510l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
-    </span>
-  </a>
+  <!-- FAB de contacto: foto de Manolo que despliega los canales -->
+  <div class="fab-stack" id="fabStack">
+    <div class="fab-menu" id="fabMenu" role="menu" aria-label="Canales de contacto">
+      <a class="fab-item fab-item--idealista" href="https://www.idealista.com/pro/montes-blanco-real-estate/venta-viviendas/" target="_blank" rel="noopener" role="menuitem" aria-label="Idealista">
+        <span class="fab-item__txt">id</span>
+      </a>
+      <a class="fab-item fab-item--fb" href="https://www.facebook.com/p/Montes-Blanco-Real-Estate-61575004358296/" target="_blank" rel="noopener" role="menuitem" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-2.9h2.4V9.8c0-2.4 1.4-3.7 3.6-3.7 1 0 2 .2 2 .2v2.3h-1.2c-1.2 0-1.5.7-1.5 1.5V12h2.6l-.4 2.9h-2.2v7A10 10 0 0 0 22 12z"/></svg>
+      </a>
+      <a class="fab-item fab-item--ig" href="https://www.instagram.com/montesblancorealestate/" target="_blank" rel="noopener" role="menuitem" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg>
+      </a>
+      <a class="fab-item fab-item--email" href="mailto:info@montesblanco.com" role="menuitem" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg>
+      </a>
+      <a class="fab-item fab-item--wa" href="https://wa.me/34635643827?text=Hola%2C%20le%20escribo%20desde%20la%20web%20de%20Montes%20Blanco%20Real%20Estate%3A" target="_blank" rel="noopener" role="menuitem" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0c3.2 0 6.2 1.247 8.413 3.488a11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l.6.953-1.005 3.668 3.764-.985.62.005zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.510l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+      </a>
+    </div>
+    <button class="whatsapp-fab" id="waFab" type="button" aria-label="Abrir canales de contacto" aria-expanded="false" aria-controls="fabMenu">
+      <img class="wa-avatar" src="images/MANOLO-CIRCULAR-BLANCO.jpg" alt="Manolo Montes" loading="lazy">
+      <span class="wa-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0c3.2 0 6.2 1.247 8.413 3.488a11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l.6.953-1.005 3.668 3.764-.985.62.005zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.510l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+      </span>
+    </button>
+  </div>
 
   <!-- Google Translate -->
   <script>
@@ -467,6 +486,6 @@
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 
-  <script src="js/main.js?v=20260516d"></script>
+  <script src="js/main.js?v=20260516e"></script>
 </body>
 </html>

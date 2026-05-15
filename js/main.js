@@ -134,6 +134,31 @@
     });
   }
 
+  /* ============== FAB CONTACTO (Manolo → canales) ============== */
+  const fabStack = $('#fabStack');
+  const waFab = $('#waFab');
+  if (fabStack && waFab) {
+    const closeFab = () => {
+      fabStack.classList.remove('is-open');
+      waFab.setAttribute('aria-expanded', 'false');
+    };
+    waFab.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = fabStack.classList.toggle('is-open');
+      waFab.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', (e) => {
+      if (!fabStack.contains(e.target)) closeFab();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeFab();
+    });
+    // Al elegir un canal, cerrar el menú
+    $$('.fab-item', fabStack).forEach(item => {
+      item.addEventListener('click', closeFab);
+    });
+  }
+
   /* ============== BACK TO TOP ============== */
   const backToTop = $('#backToTop');
   if (backToTop) {
