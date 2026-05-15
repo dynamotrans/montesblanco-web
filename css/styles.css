@@ -871,7 +871,7 @@ font[style*="vertical-align"] {
   align-items: center;
   gap: 20px;
   width: max-content;
-  animation: partners-scroll 22s linear infinite;
+  animation: partners-scroll 14s linear infinite;
 }
 .partners__marquee:hover .partners__track {
   animation-play-state: paused;
