@@ -1514,8 +1514,8 @@ font[style*="vertical-align"] {
 
   .nav__toggle { display: inline-flex; }
 
-  .hero { min-height: calc(100vh - 130px); min-height: calc(100svh - 130px); }
-  .hero__content { padding: 90px 20px 50px; }
+  .hero { min-height: calc(100vh - 130px); min-height: calc(100svh - 130px); align-items: flex-end; }
+  .hero__content { padding: 90px 20px 26px; }
   .hero h1 { font-size: clamp(2rem, 9vw, 3rem); }
   .hero__lead { font-size: 0.98rem; padding: 0 6px; }
   .hero__actions { flex-direction: column; align-items: stretch; padding: 0 8px; }
@@ -1613,8 +1613,8 @@ font[style*="vertical-align"] {
   .nav.is-scrolled .nav__brand-logo { height: 56px; }
   :root { --nav-h: 64px; }
 
-  .hero { min-height: calc(100vh - 118px); min-height: calc(100svh - 118px); }
-  .hero__content { padding: 80px 16px 40px; }
+  .hero { min-height: calc(100vh - 118px); min-height: calc(100svh - 118px); align-items: flex-end; }
+  .hero__content { padding: 80px 16px 22px; }
   .hero__eyebrow { font-size: 0.92rem; letter-spacing: 0.22em; }
   .hero h1 { font-size: clamp(1.8rem, 9vw, 2.4rem); }
 
