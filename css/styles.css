@@ -1429,23 +1429,27 @@ font[style*="vertical-align"] {
   display: block;
 }
 
-.whatsapp-fab .wa-badge {
+/* Pulso latente tipo radar alrededor de la foto de Manolo,
+   invita a pulsar. Se detiene cuando el menú está abierto. */
+.whatsapp-fab .wa-pulse {
   position: absolute;
-  right: -2px;
-  bottom: -2px;
-  width: 36px;
-  height: 36px;
-  background: #25d366;
-  color: #fff;
-  border: 3px solid #fff;
+  inset: -3px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid #25d366;
+  pointer-events: none;
+  animation: fabPulse 2.4s cubic-bezier(.4,0,.2,1) infinite;
 }
 
-.whatsapp-fab .wa-badge svg { width: 20px; height: 20px; }
+@keyframes fabPulse {
+  0%   { transform: scale(1);    opacity: 0.85; }
+  70%  { transform: scale(1.45); opacity: 0; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+
+.fab-stack.is-open .whatsapp-fab .wa-pulse {
+  animation: none;
+  opacity: 0;
+}
 
 /* Botón flotante 'Volver arriba' */
 .back-to-top {
@@ -1706,8 +1710,6 @@ body:has(.fab-stack.is-open) .back-to-top {
     width: 72px;
     height: 72px;
   }
-  .whatsapp-fab .wa-badge { width: 28px; height: 28px; right: -2px; bottom: -2px; }
-  .whatsapp-fab .wa-badge svg { width: 15px; height: 15px; }
   .fab-item { width: 46px; height: 46px; }
   .fab-item svg { width: 20px; height: 20px; }
   .fab-item__txt { font-size: 0.95rem; }
@@ -1785,6 +1787,7 @@ body:has(.fab-stack.is-open) .back-to-top {
   }
 
   .partners__track { animation: none; }
+  .whatsapp-fab .wa-pulse { animation: none; opacity: 0; }
 }
 
 .sr-only {
