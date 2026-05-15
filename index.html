@@ -33,8 +33,39 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap">
 
+  <!-- CSS inline anti-banner Google Translate (carga ANTES que cualquier CSS externo) -->
+  <style>
+    .goog-te-banner-frame,
+    .goog-te-banner-frame.skiptranslate,
+    iframe.goog-te-banner-frame,
+    .skiptranslate > iframe.goog-te-banner-frame {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      max-height: 0 !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: absolute !important;
+      top: -10000px !important;
+      left: -10000px !important;
+    }
+    html, body, body.skiptranslate {
+      top: 0 !important;
+      position: static !important;
+      margin-top: 0 !important;
+    }
+    .goog-tooltip, .goog-tooltip:hover, #goog-gt-tt,
+    .goog-te-balloon-frame {
+      display: none !important;
+    }
+    .goog-text-highlight {
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+  </style>
+
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=20260514f">
+  <link rel="stylesheet" href="css/styles.css?v=20260515c">
 </head>
 <body>
 
@@ -398,7 +429,7 @@
 
       <div class="footer__bottom">
         <span data-i18n="footer.copyright" id="copyright">© 2026 Montes Blanco Real Estate SL · Todos los derechos reservados</span>
-        <span>CIF B22536601</span>
+        <span>CIF B22636601</span>
       </div>
     </div>
   </footer>
@@ -421,6 +452,6 @@
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 
-  <script src="js/main.js?v=20260515b"></script>
+  <script src="js/main.js?v=20260515c"></script>
 </body>
 </html>
