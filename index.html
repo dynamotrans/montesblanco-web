@@ -33,13 +33,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap">
 
-  <!-- CSS anti-banner Google Translate (replica exacta del que usa dynamo) -->
+  <!-- CSS anti-banner Google Translate -->
   <style>
-    .goog-te-banner-frame { display: none !important; visibility: hidden !important; }
-    #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+    .goog-te-banner-frame,
+    iframe.goog-te-banner-frame,
+    iframe.goog-te-banner-frame.skiptranslate {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+    }
+    #goog-gt-tt, .goog-te-balloon-frame, .goog-tooltip { display: none !important; }
     .goog-te-gadget { display: none !important; }
     body { top: 0 !important; position: static !important; }
-    .skiptranslate { display: none !important; height: 0 !important; overflow: hidden !important; }
     .goog-text-highlight { background: none !important; box-shadow: none !important; }
     #google_translate_element { position: absolute; top: -9999px; left: -9999px; opacity: 0; pointer-events: none; }
   </style>
