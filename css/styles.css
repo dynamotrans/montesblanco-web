@@ -290,20 +290,25 @@ p { color: var(--text-soft); }
 .gt-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 14px 8px 12px;
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--navy);
+  gap: 8px;
+  padding: 6px 12px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
   font-family: var(--sans);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   cursor: pointer;
-  transition: background var(--t-fast), transform var(--t-fast);
+  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
 }
-.gt-trigger:hover { background: var(--white); transform: translateY(-1px); }
-.gt-flag { font-size: 1.05rem; line-height: 1; }
+.gt-trigger:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: var(--white);
+}
+.gt-flag { font-size: 1rem; line-height: 1; }
 .gt-code { letter-spacing: 0.12em; }
 .gt-caret { opacity: 0.55; }
 
@@ -1350,8 +1355,16 @@ font[style*="vertical-align"] {
   .nav__menu li { width: 100%; }
   .nav__menu a { font-size: 1rem; display: inline-block; }
 
-  .nav__translate { justify-content: flex-start; }
-  .gt-menu { left: 0; right: auto; min-width: 220px; }
+  /* Selector idioma siempre visible en navbar móvil */
+  .nav__translate { margin-left: auto; }
+  .gt-trigger { padding: 5px 10px; font-size: 0.72rem; gap: 6px; }
+  .gt-flag { font-size: 0.95rem; }
+  .gt-menu {
+    right: 0;
+    left: auto;
+    min-width: 200px;
+    top: calc(100% + 6px);
+  }
 
   .nav__cta { display: none; }
   .nav__menu .nav__cta {
