@@ -1317,7 +1317,7 @@ font[style*="vertical-align"] {
 }
 
 @media (max-width: 768px) {
-  :root { --nav-h: 70px; }
+  :root { --nav-h: 84px; }
 
   .nav__inner { padding: 0 18px; gap: 12px; }
 
@@ -1364,7 +1364,7 @@ font[style*="vertical-align"] {
   .hero__actions .btn { justify-content: center; }
   .hero__scroll { display: none; }
 
-  .about__media { max-width: 320px; }
+  .about__media { max-width: 480px; }
 
   .services { gap: 16px; }
   .service { padding: 36px 24px; }
@@ -1433,9 +1433,9 @@ font[style*="vertical-align"] {
   .section { padding: 64px 0; }
   .nav__brand-sub { display: none; }
   .nav__brand-mark { font-size: 1.2rem; }
-  .nav__brand-logo { height: 56px; }
-  .nav.is-scrolled .nav__brand-logo { height: 56px; }
-  :root { --nav-h: 64px; }
+  .nav__brand-logo { height: 76px; }
+  .nav.is-scrolled .nav__brand-logo { height: 76px; }
+  :root { --nav-h: 80px; }
 
   .hero { min-height: 68vh; }
   .hero__content { padding: 80px 16px 40px; }
