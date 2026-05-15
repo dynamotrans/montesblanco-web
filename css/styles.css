@@ -961,8 +961,9 @@ font[style*="vertical-align"] {
 .partners__title {
   text-align: center;
   font-family: var(--sans);
-  font-size: 0.68rem;
-  letter-spacing: 0.32em;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--gold-dark);
   margin-bottom: 18px;
@@ -1723,7 +1724,7 @@ body:has(.fab-stack.is-open) .back-to-top {
   .partners__marquee::before,
   .partners__marquee::after { width: 40px; }
   .partners { padding: 12px 0; }
-  .partners__title { font-size: 0.6rem; margin-bottom: 8px; }
+  .partners__title { font-size: 0.8rem; margin-bottom: 8px; }
 
   .footer__grid {
     grid-template-columns: 1fr;
