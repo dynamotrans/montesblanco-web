@@ -35,14 +35,16 @@
      body con style="top: 40px". El CSS solo a veces lo atrapa,
      así que también lo limpiamos vía JS con un MutationObserver. */
   const killGtBanner = () => {
-    document.querySelectorAll(
-      'iframe.goog-te-banner-frame, .goog-te-banner-frame, .goog-te-banner-frame.skiptranslate, .skiptranslate > iframe'
-    ).forEach(el => { try { el.remove(); } catch (_) {} });
-    // Reset inline top que GT pone en <body> y <html>
+    // Solo escondemos el banner — NO lo eliminamos (Google a veces lo recrea
+    // y, peor, si tocamos otros iframes con .skiptranslate, rompemos la
+    // traducción). Hide + reset body.top es suficiente.
+    document.querySelectorAll('.goog-te-banner-frame').forEach(el => {
+      el.style.display = 'none';
+      el.style.visibility = 'hidden';
+      el.style.height = '0';
+    });
+    // Reset inline top que GT pone en <body> para hacer hueco al banner
     if (document.body && document.body.style.top) document.body.style.top = '';
-    if (document.documentElement && document.documentElement.style.top) {
-      document.documentElement.style.top = '';
-    }
   };
 
   // Observer permanente: si el banner reaparece, lo quitamos
