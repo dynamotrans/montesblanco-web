@@ -540,20 +540,10 @@ font[style*="vertical-align"] {
   color: var(--gold-soft);
 }
 
-.hero h1 {
-  color: var(--white);
-  font-size: clamp(2.6rem, 6.5vw, 5.4rem);
-  line-height: 1.05;
-  font-weight: 400;
-  letter-spacing: -0.015em;
-  opacity: 0;
-  animation: rise 1s .4s forwards;
-}
-
-.hero h1 em {
-  font-style: italic;
-  color: var(--gold-soft);
-  font-weight: 300;
+/* Espacio en blanco donde estaba el título del hero (mantiene el
+   equilibrio visual sin texto) */
+.hero__spacer {
+  height: clamp(40px, 9vh, 110px);
 }
 
 .hero__lead {
@@ -1531,7 +1521,7 @@ font[style*="vertical-align"] {
 
   .hero { min-height: calc(100vh - 130px); min-height: calc(100svh - 130px); align-items: flex-end; }
   .hero__content { padding: 90px 20px 26px; }
-  .hero h1 { font-size: clamp(2rem, 9vw, 3rem); }
+  .hero__spacer { height: clamp(24px, 5vh, 56px); }
   .hero__lead { font-size: 0.98rem; padding: 0 6px; }
   .hero__actions { flex-direction: column; align-items: stretch; padding: 0 8px; }
   .hero__actions .btn { justify-content: center; }
@@ -1632,7 +1622,7 @@ font[style*="vertical-align"] {
   .hero__content { padding: 80px 16px 22px; }
   .hero__eyebrow-main { font-size: 1.3rem; letter-spacing: 0.1em; }
   .hero__eyebrow-sub { font-size: 0.72rem; letter-spacing: 0.24em; }
-  .hero h1 { font-size: clamp(1.8rem, 9vw, 2.4rem); }
+  .hero__spacer { height: clamp(20px, 4vh, 44px); }
 
   .section-head h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
 
