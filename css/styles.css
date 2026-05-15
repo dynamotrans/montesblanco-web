@@ -1280,6 +1280,40 @@ font[style*="vertical-align"] {
 
 .whatsapp-fab .wa-badge svg { width: 20px; height: 20px; }
 
+/* Botón flotante 'Volver arriba' */
+.back-to-top {
+  position: fixed;
+  right: 36px;
+  bottom: 132px;
+  width: 48px;
+  height: 48px;
+  background: #002349;
+  color: var(--gold-soft);
+  border: 1px solid rgba(200, 164, 92, 0.45);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 89;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .3s, transform .3s, visibility .3s, background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--gold);
+  color: #002349;
+  border-color: var(--gold);
+}
+.back-to-top svg { width: 22px; height: 22px; }
+
 /* ---------- LEGAL PAGES ---------- */
 .legal {
   padding: calc(var(--nav-h) + 80px) 0 80px;
@@ -1493,6 +1527,14 @@ font[style*="vertical-align"] {
   }
   .whatsapp-fab .wa-badge { width: 30px; height: 30px; right: -2px; bottom: -2px; }
   .whatsapp-fab .wa-badge svg { width: 16px; height: 16px; }
+
+  .back-to-top {
+    bottom: 112px;
+    right: 24px;
+    width: 42px;
+    height: 42px;
+  }
+  .back-to-top svg { width: 20px; height: 20px; }
 }
 
 @media (max-width: 480px) {

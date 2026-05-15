@@ -103,6 +103,19 @@
     });
   });
 
+  /* ============== BACK TO TOP ============== */
+  const backToTop = $('#backToTop');
+  if (backToTop) {
+    const toggleBackToTop = () => {
+      backToTop.classList.toggle('is-visible', window.scrollY > 400);
+    };
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    toggleBackToTop();
+  }
+
   /* ============== REVEAL ON SCROLL ============== */
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
