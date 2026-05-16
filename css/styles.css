@@ -866,7 +866,7 @@ font[style*="vertical-align"] {
 
 .portal__brand {
   position: relative;
-  height: 104px;
+  height: 82px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -884,7 +884,7 @@ font[style*="vertical-align"] {
 
 .portal__logo {
   display: block;
-  height: 92px;
+  height: 72px;
   width: auto;
   max-width: 80%;
   background: transparent;
@@ -902,10 +902,10 @@ font[style*="vertical-align"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 62px;
+  height: 48px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 1.6rem;
   letter-spacing: -0.04em;
   line-height: 1;
   color: #ffffff;
