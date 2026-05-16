@@ -1696,9 +1696,9 @@ body:has(.fab-stack.is-open) .back-to-top {
   .services { gap: 16px; }
   .service { padding: 36px 24px; }
 
-  .portal__brand { height: 128px; padding: 0; }
-  .portal__logo { height: 102px; max-width: 80%; }
-  .portal__logo--text { height: 68px; font-size: 2.1rem; }
+  .portal__brand { height: 76px; padding: 0; }
+  .portal__logo { height: 60px; max-width: 70%; }
+  .portal__logo--text { height: 40px; font-size: 1.4rem; }
   .portal__body { padding: 22px 24px 26px; }
   .portal h3 { font-size: 1.4rem; }
 
@@ -1794,9 +1794,9 @@ body:has(.fab-stack.is-open) .back-to-top {
 
   .about__media { max-width: 100%; margin: 0 auto; }
 
-  .portal__brand { height: 116px; padding: 0; }
-  .portal__logo { height: 87px; max-width: 80%; }
-  .portal__logo--text { height: 58px; font-size: 1.85rem; }
+  .portal__brand { height: 68px; padding: 0; }
+  .portal__logo { height: 52px; max-width: 70%; }
+  .portal__logo--text { height: 36px; font-size: 1.3rem; }
   .portal__body { padding: 20px 20px 24px; }
   .portal h3 { font-size: 1.3rem; }
   .portal p { font-size: 0.9rem; }
