@@ -866,7 +866,7 @@ font[style*="vertical-align"] {
 
 .portal__brand {
   position: relative;
-  height: 150px;
+  height: 128px;
   display: flex;
   align-items: center;
   justify-content: center;
