@@ -1011,8 +1011,9 @@ font[style*="vertical-align"] {
   flex-wrap: nowrap !important;
   align-items: center;
   width: max-content;
-  animation: partners-scroll 18s linear infinite;
+  animation: partners-scroll 26s linear infinite;
   will-change: transform;
+  transform: translateZ(0);
   backface-visibility: hidden;
 }
 .partners__marquee:hover .partners__track {
@@ -1020,9 +1021,9 @@ font[style*="vertical-align"] {
 }
 
 .partner {
-  flex: 0 0 auto;
+  flex: 0 0 220px;
+  width: 220px;
   height: 96px;
-  min-width: 120px;
   padding: 0 16px;
   display: flex;
   align-items: center;
@@ -1063,8 +1064,8 @@ font[style*="vertical-align"] {
 }
 
 @keyframes partners-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
 }
 
 /* ---------- VISIT (oficina + mapa) ---------- */
@@ -1732,7 +1733,7 @@ body:has(.fab-stack.is-open) .back-to-top {
     z-index: 1;
   }
 
-  .partner { height: 84px; min-width: 95px; padding: 0 8px; }
+  .partner { height: 84px; flex: 0 0 150px; width: 150px; min-width: 0; padding: 0 8px; }
   .partner img { max-height: 60px; max-width: 180px; }
   .partner img[src*="SANTANDER"],
   .partner img[src*="NEINOR"] { max-height: 78px; max-width: 220px; }
@@ -1806,7 +1807,7 @@ body:has(.fab-stack.is-open) .back-to-top {
   }
   .visit-map iframe { height: 260px; }
 
-  .partner { height: 78px; min-width: 88px; padding: 0 6px; }
+  .partner { height: 78px; flex: 0 0 132px; width: 132px; min-width: 0; padding: 0 6px; }
   .partner img { max-height: 56px; max-width: 170px; }
   .partner img[src*="SANTANDER"],
   .partner img[src*="NEINOR"] { max-height: 72px; max-width: 200px; }
