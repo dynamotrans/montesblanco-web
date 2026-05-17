@@ -282,6 +282,17 @@ p { color: var(--text-soft); }
   color: var(--navy);
 }
 
+/* En pantallas anchas: menú perfectamente centrado en la barra,
+   con la marca a la izquierda y el selector de idioma a la derecha */
+@media (min-width: 1100px) {
+  .nav__inner { position: relative; }
+  .nav__inner > nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 /* Custom language switcher (Google Translate hidden behind the scenes) */
 .nav__translate { display: flex; align-items: center; margin-left: 4px; }
 
