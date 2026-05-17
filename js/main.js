@@ -14,17 +14,19 @@
     instagram: 'https://www.instagram.com/montesblancorealestate/'
   };
 
+  // fi = código de país de flag-icons (banderas vectoriales, se ven
+  // igual en Windows/Mac/iPhone/Android, sin depender del emoji)
   const LANGS = {
-    es: {flag: '🇪🇸', code: 'ES'},
-    en: {flag: '🇬🇧', code: 'EN'},
-    fr: {flag: '🇫🇷', code: 'FR'},
-    de: {flag: '🇩🇪', code: 'DE'},
-    pt: {flag: '🇵🇹', code: 'PT'},
-    it: {flag: '🇮🇹', code: 'IT'},
-    ru: {flag: '🇷🇺', code: 'RU'},
-    ar: {flag: '🇸🇦', code: 'AR'},
-    'zh-CN': {flag: '🇨🇳', code: 'ZH'},
-    ja: {flag: '🇯🇵', code: 'JA'}
+    es: {fi: 'es', code: 'ES'},
+    en: {fi: 'gb', code: 'EN'},
+    fr: {fi: 'fr', code: 'FR'},
+    de: {fi: 'de', code: 'DE'},
+    pt: {fi: 'pt', code: 'PT'},
+    it: {fi: 'it', code: 'IT'},
+    ru: {fi: 'ru', code: 'RU'},
+    ar: {fi: 'sa', code: 'AR'},
+    'zh-CN': {fi: 'cn', code: 'ZH'},
+    ja: {fi: 'jp', code: 'JA'}
   };
 
   const $  = (sel, root = document) => root.querySelector(sel);
@@ -215,7 +217,7 @@
     const data = LANGS[code] || LANGS.es;
     const flagEl = gtTrigger.querySelector('.gt-flag');
     const codeEl = gtTrigger.querySelector('.gt-code');
-    if (flagEl) flagEl.textContent = data.flag;
+    if (flagEl) flagEl.className = 'gt-flag fi fi-' + data.fi;
     if (codeEl) codeEl.textContent = data.code;
     if (gtMenu) {
       $$('button[data-lang]', gtMenu).forEach(b => {

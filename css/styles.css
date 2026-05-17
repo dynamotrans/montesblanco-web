@@ -308,7 +308,18 @@ p { color: var(--text-soft); }
   border-color: rgba(255, 255, 255, 0.45);
   color: var(--white);
 }
-.gt-flag { font-size: 1rem; line-height: 1; }
+/* Bandera vectorial (flag-icons): mismo aspecto en todos los sistemas */
+.gt-flag.fi {
+  width: 22px;
+  height: 16px;
+  border-radius: 2px;
+  line-height: 1;
+  flex: 0 0 auto;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+  background-size: cover;
+  background-position: center;
+}
+.gt-menu button .gt-flag.fi { margin-right: 4px; vertical-align: -2px; }
 .gt-code { letter-spacing: 0.12em; }
 .gt-caret { opacity: 0.55; }
 
@@ -1682,7 +1693,7 @@ body:has(.fab-stack.is-open) .back-to-top {
   /* Selector idioma siempre visible en navbar móvil */
   .nav__translate { margin-left: auto; }
   .gt-trigger { padding: 5px 10px; font-size: 0.72rem; gap: 6px; }
-  .gt-flag { font-size: 0.95rem; }
+  .gt-flag.fi { width: 20px; height: 14px; }
   .gt-menu {
     right: 0;
     left: auto;
