@@ -667,24 +667,41 @@ font[style*="vertical-align"] {
   .hero-screen {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    height: 100svh;
+    min-height: 100vh;
+    min-height: 100svh;
   }
   .hero-screen .hero {
-    flex: 1 1 auto;
+    flex: 1 0 auto;
     height: auto;
-    min-height: 0;
   }
   .hero-screen .partners {
     flex: 0 0 auto;
   }
   .hero__content {
-    padding: 72px 24px 28px;
+    padding: calc(var(--nav-h) + 24px) 24px 28px;
   }
   .hero__eyebrow { margin-bottom: 22px; }
   .hero__spacer { height: clamp(16px, 3.5vh, 56px); }
   .hero__lead { margin-top: 20px; }
   .hero__scroll { bottom: 24px; }
+
+  /* Pantallas de portátil bajas: compactar el hero para que el
+     cuadro de 'Asesores Inmobiliarios' nunca se recorte ni quede
+     tapado por la barra superior */
+  @media (max-height: 800px) {
+    .hero__content { padding: calc(var(--nav-h) + 14px) 24px 18px; }
+    .hero__eyebrow {
+      padding: clamp(16px, 2.4vw, 24px) clamp(26px, 5vw, 48px);
+      margin-bottom: 14px;
+      gap: 10px;
+    }
+    .hero__eyebrow-main { font-size: clamp(1.7rem, 3.2vw, 2.4rem); }
+    .hero__eyebrow-line { width: 44px; }
+    .hero__eyebrow-sub { font-size: clamp(0.64rem, 1vw, 0.74rem); }
+    .hero__spacer { height: clamp(8px, 1.6vh, 22px); }
+    .hero__lead { margin-top: 12px; font-size: clamp(0.92rem, 1.1vw, 1rem); }
+    .hero__lead br + br { display: none; }
+  }
 }
 
 /* ---------- BUTTONS ---------- */
