@@ -191,7 +191,7 @@ p { color: var(--text-soft); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 32px;
 }
 
 .nav__brand {
@@ -283,7 +283,7 @@ p { color: var(--text-soft); }
 }
 
 /* Custom language switcher (Google Translate hidden behind the scenes) */
-.nav__translate { display: flex; align-items: center; }
+.nav__translate { display: flex; align-items: center; margin-left: 4px; }
 
 .gt-switch { position: relative; }
 
