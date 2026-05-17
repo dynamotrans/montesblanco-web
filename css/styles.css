@@ -1011,7 +1011,7 @@ font[style*="vertical-align"] {
   flex-wrap: nowrap !important;
   align-items: center;
   width: max-content;
-  animation: partners-scroll 26s linear infinite;
+  animation: partners-scroll 17s linear infinite;
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
