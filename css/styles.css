@@ -1634,7 +1634,7 @@ body:has(.fab-stack.is-open) .back-to-top {
 
   .visit__gallery { min-height: 360px; }
 
-  .portals { grid-template-columns: 1fr; gap: 24px; }
+  .portals { grid-template-columns: 1fr 1fr; gap: 14px; }
 
   .footer__grid {
     grid-template-columns: 1fr 1fr;
@@ -1708,8 +1708,8 @@ body:has(.fab-stack.is-open) .back-to-top {
   .portal__brand { height: 70px; padding: 0; }
   .portal__logo { height: 40px; max-width: 70%; }
   .portal__logo--text { height: auto; font-size: 1.05rem; padding: 8px 15px; }
-  .portal__body { padding: 22px 24px 26px; }
-  .portal h3 { font-size: 1.4rem; }
+  .portal__body { padding: 16px 16px 18px; }
+  .portal__arrow { font-size: 0.62rem; letter-spacing: 0.12em; gap: 7px; }
 
   /* Apartado VISIT en móvil: forzamos block para que galería e info NO se solapen nunca */
   .visit {
@@ -1806,9 +1806,10 @@ body:has(.fab-stack.is-open) .back-to-top {
   .portal__brand { height: 64px; padding: 0; }
   .portal__logo { height: 36px; max-width: 70%; }
   .portal__logo--text { height: auto; font-size: 1rem; padding: 7px 14px; }
-  .portal__body { padding: 20px 20px 24px; }
-  .portal h3 { font-size: 1.3rem; }
-  .portal p { font-size: 0.9rem; }
+  .portal__body { padding: 12px 12px 14px; }
+  .portal p { font-size: 0.84rem; line-height: 1.5; margin-bottom: 14px; }
+  .portal__arrow { font-size: 0.56rem; letter-spacing: 0.06em; gap: 5px; }
+  .portal__arrow svg { width: 16px; }
 
   .visit__gallery {
     grid-template-rows: 180px 180px 180px;
