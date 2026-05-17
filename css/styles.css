@@ -875,14 +875,20 @@ font[style*="vertical-align"] {
 
 .portal__brand {
   position: relative;
-  height: 80px;
+  height: 82px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   padding: 0;
-  background: var(--white);
-  border-bottom: 1px solid var(--line);
+}
+
+.portal--idealista .portal__brand {
+  background: #e1f56f;
+}
+
+.portal--fotocasa .portal__brand {
+  background: #2d39af;
 }
 
 .portal__logo {
@@ -911,18 +917,16 @@ font[style*="vertical-align"] {
   font-size: 1.6rem;
   letter-spacing: -0.04em;
   line-height: 1;
+  color: #ffffff;
   background: transparent;
 }
-
-.portal--idealista .portal__logo--text { color: #1a1a1a; }
-.portal--fotocasa .portal__logo--text { color: #2d39af; }
 
 .portal:hover .portal__logo {
   transform: scale(1.04);
 }
 
 .portal__body {
-  padding: 20px 30px 22px;
+  padding: 26px 30px 30px;
 }
 
 .portal__label {
