@@ -911,10 +911,12 @@ font[style*="vertical-align"] {
   font-size: 1.15rem;
   letter-spacing: -0.04em;
   line-height: 1;
-  color: #ffffff;
-  background: #2d39af;
   box-shadow: 0 2px 10px rgba(13, 35, 64, 0.14);
 }
+
+/* Misma pastilla para ambos; solo cambia el color de marca */
+.portal--idealista .portal__logo--text { background: #e1f56f; color: #1a1a1a; }
+.portal--fotocasa .portal__logo--text { background: #2d39af; color: #ffffff; }
 
 .portal:hover .portal__logo {
   transform: scale(1.04);
