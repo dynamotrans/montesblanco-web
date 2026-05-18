@@ -1494,6 +1494,41 @@ font[style*="vertical-align"] {
   pointer-events: auto;
 }
 
+.fab-name {
+  background: var(--navy);
+  color: var(--white);
+  padding: 9px 18px;
+  border-radius: 999px;
+  text-align: center;
+  white-space: nowrap;
+  border: 1px solid var(--line-gold);
+  box-shadow: 0 6px 16px rgba(13, 35, 64, 0.28);
+  opacity: 0;
+  transform: scale(0.6) translateY(20px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1);
+}
+.fab-name strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.fab-name span {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+}
+.fab-stack.is-open .fab-name {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+  transition-delay: .30s;
+}
+
 .fab-item {
   width: 52px;
   height: 52px;
