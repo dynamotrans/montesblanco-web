@@ -840,7 +840,7 @@ font[style*="vertical-align"] {
 }
 
 .service {
-  padding: 48px 32px;
+  padding: 48px 32px 84px;
   background: var(--white);
   border: 1px solid var(--line);
   text-align: center;
@@ -869,6 +869,67 @@ font[style*="vertical-align"] {
 .service p {
   font-size: 0.95rem;
   line-height: 1.65;
+}
+
+/* Contacto rápido: 3 burbujas que aparecen al pasar/pulsar la tarjeta */
+.service__contact {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity .45s ease, transform .45s ease;
+}
+
+.service:hover .service__contact,
+.service:focus-within .service__contact,
+.service.is-contact-open .service__contact {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.service__dot {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border: 1px solid var(--line-gold);
+  color: var(--navy);
+  box-shadow: 0 4px 14px rgba(13, 35, 64, 0.08);
+  transform: scale(0.85);
+  opacity: 0;
+  transition: transform .4s ease, opacity .4s ease, background .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.service__dot svg { width: 18px; height: 18px; }
+
+.service:hover .service__dot,
+.service:focus-within .service__dot,
+.service.is-contact-open .service__dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.service__dot:nth-child(1) { transition-delay: .05s; }
+.service__dot:nth-child(2) { transition-delay: .12s; }
+.service__dot:nth-child(3) { transition-delay: .19s; }
+
+.service__dot:hover,
+.service__dot:focus-visible {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+  transform: scale(1.1);
+  outline: none;
 }
 
 /* ---------- PROPERTIES (CTA externos) ---------- */
@@ -1726,7 +1787,7 @@ body:has(.fab-stack.is-open) .back-to-top {
   .about__media { max-width: 100%; margin: 0 auto; }
 
   .services { gap: 16px; }
-  .service { padding: 36px 24px; }
+  .service { padding: 36px 24px 76px; }
 
   .portal__brand { height: 70px; padding: 0; }
   .portal__logo { height: 40px; max-width: 70%; }

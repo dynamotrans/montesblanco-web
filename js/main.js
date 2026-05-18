@@ -161,6 +161,28 @@
     });
   }
 
+  /* ============== SERVICIOS: CONTACTO RÁPIDO ============== */
+  const services = $$('.service');
+  if (services.length) {
+    const closeServices = (except) => {
+      services.forEach(s => { if (s !== except) s.classList.remove('is-contact-open'); });
+    };
+    services.forEach(service => {
+      service.addEventListener('click', (e) => {
+        if (e.target.closest('.service__dot')) return; // dejar pasar el enlace
+        const willOpen = !service.classList.contains('is-contact-open');
+        closeServices(service);
+        service.classList.toggle('is-contact-open', willOpen);
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.service')) closeServices();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeServices();
+    });
+  }
+
   /* ============== BACK TO TOP ============== */
   const backToTop = $('#backToTop');
   if (backToTop) {
