@@ -536,41 +536,57 @@ font[style*="vertical-align"] {
 }
 
 .hero__eyebrow {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 36px;
+  gap: 14px;
+  width: 100%;
+  margin: 0 0 40px;
+  padding: 26px 24px 24px;
   text-align: center;
+  background: rgba(8, 23, 48, 0.42);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border-top: 1px solid var(--line-gold);
+  border-bottom: 1px solid var(--line-gold);
   opacity: 0;
   animation: rise .9s .2s forwards;
   position: relative;
 }
 
 .hero__eyebrow-main {
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  font-size: clamp(1.05rem, 2.4vw, 1.9rem);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1.4;
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 2.6vw, 2.15rem);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1.3;
+  text-transform: uppercase;
   color: var(--white);
 }
 
-.hero__eyebrow-line {
-  width: 56px;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.75;
-}
+/* Antiguo divisor corto: la banda y sus filetes lo sustituyen */
+.hero__eyebrow-line { display: none; }
 
 .hero__eyebrow-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
   font-family: var(--sans);
-  font-size: clamp(0.68rem, 1.2vw, 0.82rem);
+  font-size: clamp(0.66rem, 1.1vw, 0.78rem);
   font-weight: 500;
-  letter-spacing: 0.36em;
+  letter-spacing: 0.42em;
   line-height: 1.2;
   text-transform: uppercase;
   color: var(--gold-soft);
+}
+
+.hero__eyebrow-sub::before,
+.hero__eyebrow-sub::after {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.7;
 }
 
 /* Espacio en blanco donde estaba el título del hero (mantiene el
