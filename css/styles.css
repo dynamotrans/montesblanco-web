@@ -535,23 +535,28 @@ font[style*="vertical-align"] {
   padding: 120px 24px 60px;
 }
 
+/* Barra navy sólida de ancho completo, justo debajo del menú fijo */
+.hero__strip {
+  position: absolute;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: #002349;
+  border-bottom: 1px solid rgba(200, 164, 92, 0.45);
+}
+
 .hero__eyebrow {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   width: 100%;
-  margin: 0 0 40px;
-  padding: 26px 24px 24px;
+  margin: 0;
+  padding: 22px 24px;
   text-align: center;
-  background: rgba(8, 23, 48, 0.42);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
-  border-top: 1px solid var(--line-gold);
-  border-bottom: 1px solid var(--line-gold);
   opacity: 0;
   animation: rise .9s .2s forwards;
-  position: relative;
 }
 
 .hero__eyebrow-main {
