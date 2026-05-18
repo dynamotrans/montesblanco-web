@@ -468,7 +468,7 @@ font[style*="vertical-align"] {
   min-height: calc(100vh - var(--nav-h) - 210px);
   min-height: calc(100svh - var(--nav-h) - 210px);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   text-align: center;
   color: var(--white);
@@ -561,7 +561,7 @@ font[style*="vertical-align"] {
 
 .hero__eyebrow-main {
   font-family: var(--sans);
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.85rem, 1.4vw, 1.1rem);
   font-weight: 700;
   font-style: italic;
   letter-spacing: 0.02em;
@@ -709,7 +709,7 @@ font[style*="vertical-align"] {
       margin-bottom: 0;
       gap: 6px;
     }
-    .hero__eyebrow-main { font-size: clamp(0.95rem, 2vw, 1.5rem); }
+    .hero__eyebrow-main { font-size: clamp(0.82rem, 1.3vw, 1rem); }
     .hero__eyebrow-line { width: 44px; }
     .hero__eyebrow-sub { font-size: clamp(0.64rem, 1vw, 0.74rem); }
     .hero__spacer { height: clamp(8px, 1.6vh, 22px); }
