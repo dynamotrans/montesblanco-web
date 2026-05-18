@@ -1816,7 +1816,7 @@ body:has(.fab-stack.is-open) .back-to-top {
   .hero { min-height: calc(100vh - 118px); min-height: calc(100svh - 118px); align-items: flex-end; }
   .hero__content { padding: 80px 16px 22px; }
   .hero__eyebrow { gap: 6px; }
-  .hero__eyebrow-main { font-size: clamp(0.82rem, 4vw, 1.25rem); }
+  .hero__eyebrow-main { font-size: clamp(0.78rem, 3vw, 0.95rem); }
   .hero__eyebrow-sub { font-size: 0.68rem; letter-spacing: 0.28em; }
   .hero__eyebrow-line { width: 44px; }
   .hero__spacer { height: clamp(20px, 4vh, 44px); }
