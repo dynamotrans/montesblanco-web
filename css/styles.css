@@ -1717,6 +1717,7 @@ body:has(.fab-stack.is-open) .back-to-top {
   .hero { min-height: calc(100vh - 130px); min-height: calc(100svh - 130px); align-items: flex-end; }
   .hero__content { padding: 90px 20px 26px; }
   .hero__spacer { height: clamp(24px, 5vh, 56px); }
+  .hero__eyebrow-main { font-size: clamp(0.78rem, 2.6vw, 0.95rem); }
   .hero__lead { font-size: 0.98rem; padding: 0 6px; }
   .hero__actions { flex-direction: column; align-items: stretch; padding: 0 8px; }
   .hero__actions .btn { justify-content: center; }
