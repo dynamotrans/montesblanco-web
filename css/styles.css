@@ -563,9 +563,9 @@ font[style*="vertical-align"] {
   font-family: var(--sans);
   font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 700;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.02em;
   line-height: 1.3;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--white);
 }
 
