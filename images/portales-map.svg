@@ -63,11 +63,11 @@
     <path d="M 920 410 Q 960 430 1000 420 T 1050 460" stroke="#a8853f" stroke-width="2" fill="none" opacity="0.5"/>
   </g>
 
-  <!-- Río en navy con curvas -->
+  <!-- Río en azul con curvas -->
   <path d="M -20 230 Q 220 180 380 260 T 760 230 Q 960 200 1220 280"
-        stroke="#0d2340" stroke-width="46" fill="none" opacity="0.55" stroke-linecap="round"/>
+        stroke="#4a8fd0" stroke-width="46" fill="none" opacity="0.85" stroke-linecap="round"/>
   <path d="M -20 230 Q 220 180 380 260 T 760 230 Q 960 200 1220 280"
-        stroke="#1d3760" stroke-width="36" fill="none" opacity="0.5" stroke-linecap="round"/>
+        stroke="#6aa9d8" stroke-width="34" fill="none" opacity="0.85" stroke-linecap="round"/>
 
   <!-- Avenidas principales (dorado oscuro) -->
   <g stroke="#a8853f" stroke-width="20" fill="none" stroke-linecap="round">
