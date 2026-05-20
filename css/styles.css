@@ -790,6 +790,9 @@ font[style*="vertical-align"] {
   box-shadow: var(--shadow-lg);
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 28%;
   display: block;
 }
 
