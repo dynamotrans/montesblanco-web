@@ -2058,3 +2058,22 @@ body.lightbox-open { overflow: hidden; }
   .lightbox__nav--prev { left: 10px; }
   .lightbox__nav--next { right: 10px; }
 }
+
+/* Mapa de fondo decorativo en sección 'Nuestros inmuebles' */
+#properties {
+  position: relative;
+  overflow: hidden;
+}
+#properties::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../images/portales-map.svg') center center / cover no-repeat;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+#properties > .container {
+  position: relative;
+  z-index: 1;
+}
