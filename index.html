@@ -341,9 +341,16 @@
       </div>
 
       <div class="visit reveal">
-        <div class="visit__gallery">
-          <img src="images/local1.jpg" onerror="this.onerror=null;this.src='images/local-placeholder-1.svg'" alt="Oficina de Montes Blanco en Dos Hermanas" loading="lazy">
-          <img src="images/EN3.jpg" onerror="this.onerror=null;this.src='images/local-placeholder-3.svg'" alt="Detalle del local de Montes Blanco" loading="lazy">
+        <div class="visit__gallery" id="visitGallery">
+          <button type="button" class="visit__thumb visit__thumb--lg" data-index="0" aria-label="Ver foto 1"><img src="images/MB-FOTO-1.webp" alt="Oficina de Montes Blanco Real Estate en Dos Hermanas" loading="lazy"></button>
+          <button type="button" class="visit__thumb" data-index="1" aria-label="Ver foto 2"><img src="images/MB-FOTO-2.webp" alt="Interior del local de Montes Blanco" loading="lazy"></button>
+          <button type="button" class="visit__thumb" data-index="2" aria-label="Ver foto 3"><img src="images/MB-FOTO-4.webp" alt="Espacio de atención al cliente" loading="lazy"></button>
+          <button type="button" class="visit__thumb" data-index="3" aria-label="Ver foto 4"><img src="images/MB-FOTO-5.webp" alt="Detalle del entorno de la inmobiliaria" loading="lazy"></button>
+          <button type="button" class="visit__thumb" data-index="4" aria-label="Ver foto 5"><img src="images/MB-FOTO-7.webp" alt="Equipo de Montes Blanco Real Estate" loading="lazy"></button>
+          <button type="button" class="visit__thumb" data-index="5" aria-label="Ver foto 6"><img src="images/MB-FOTO-9.webp" alt="Fachada del local en Dos Hermanas" loading="lazy"></button>
+          <button type="button" class="visit__thumb" data-index="6" aria-label="Ver foto 7"><img src="images/MB-FOTO-10.webp" alt="Zona de trabajo" loading="lazy"></button>
+          <button type="button" class="visit__thumb" data-index="7" aria-label="Ver foto 8"><img src="images/MB-FOTO-11.webp" alt="Entorno de Dos Hermanas" loading="lazy"></button>
+          <button type="button" class="visit__thumb" data-index="8" aria-label="Ver foto 9"><img src="images/MB-FOTO-13.webp" alt="Espacio Montes Blanco Real Estate" loading="lazy"></button>
         </div>
 
         <div class="visit__info">
@@ -527,6 +534,23 @@
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+
+  <!-- Lightbox de la galería 'Visítenos' -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Galería de fotos">
+    <button class="lightbox__close" type="button" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Foto anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" alt="" />
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Foto siguiente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+  </div>
 
   <script src="js/main.js?v=20260516f"></script>
 </body>

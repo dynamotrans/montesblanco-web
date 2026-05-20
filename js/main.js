@@ -183,6 +183,55 @@
     });
   }
 
+  /* ============== LIGHTBOX (galería Visítenos) ============== */
+  const gallery = $('#visitGallery');
+  const lightbox = $('#lightbox');
+  if (gallery && lightbox) {
+    const lbImg = $('.lightbox__img', lightbox);
+    const lbCap = $('.lightbox__caption', lightbox);
+    const btnPrev = $('.lightbox__nav--prev', lightbox);
+    const btnNext = $('.lightbox__nav--next', lightbox);
+    const btnClose = $('.lightbox__close', lightbox);
+    const thumbs = $$('.visit__thumb', gallery);
+    const photos = thumbs.map(t => {
+      const img = t.querySelector('img');
+      return { src: img.getAttribute('src'), alt: img.getAttribute('alt') || '' };
+    });
+    let current = 0;
+
+    const show = (i) => {
+      current = (i + photos.length) % photos.length;
+      lbImg.src = photos[current].src;
+      lbImg.alt = photos[current].alt;
+      lbCap.textContent = photos[current].alt;
+    };
+    const open = (i) => {
+      show(i);
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-open');
+    };
+    const close = () => {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+    };
+
+    thumbs.forEach((t, i) => t.addEventListener('click', () => open(i)));
+    btnPrev.addEventListener('click', (e) => { e.stopPropagation(); show(current - 1); });
+    btnNext.addEventListener('click', (e) => { e.stopPropagation(); show(current + 1); });
+    btnClose.addEventListener('click', close);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(current - 1);
+      else if (e.key === 'ArrowRight') show(current + 1);
+    });
+  }
+
   /* ============== BACK TO TOP ============== */
   const backToTop = $('#backToTop');
   if (backToTop) {
