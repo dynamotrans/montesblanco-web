@@ -1207,6 +1207,11 @@ font[style*="vertical-align"] {
   transform: scale(1.06);
 }
 
+.visit__thumb--lg {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
 .visit__thumb--wide {
   grid-column: span 2;
   aspect-ratio: 2 / 1;
@@ -1850,6 +1855,7 @@ body:has(.fab-stack.is-open) .back-to-top {
 
   /* Apartado VISIT en móvil */
   .visit__gallery { grid-template-columns: repeat(2, 1fr); gap: 4px; padding: 4px; }
+  .visit__thumb--lg { grid-column: span 2; grid-row: span 1; aspect-ratio: 4 / 3; }
   .visit__thumb--wide { aspect-ratio: 16 / 11; }
   .visit__info {
     padding: 32px 24px;
