@@ -1,19 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-  <!-- Fondo base crema -->
-  <rect width="1200" height="800" fill="#f8f5f0"/>
+  <!-- Fondo gris claro tipo mapa -->
+  <rect width="1200" height="800" fill="#ededed"/>
 
-  <!-- Manzanas (bloques) -->
-  <g fill="#e8e1d2">
-    <!-- fila superior -->
+  <!-- Manzanas / bloques gris medio -->
+  <g fill="#d6d6d6">
     <rect x="40"   y="50"  width="170" height="110"/>
     <rect x="230"  y="50"  width="120" height="110"/>
-    <rect x="370"  y="50"  width="160" height="80"/>
     <rect x="550"  y="50"  width="140" height="90"/>
     <rect x="710"  y="50"  width="180" height="110"/>
     <rect x="910"  y="50"  width="110" height="80"/>
     <rect x="1040" y="50"  width="120" height="110"/>
 
-    <!-- segunda fila -->
     <rect x="40"   y="200" width="120" height="130"/>
     <rect x="180"  y="200" width="90"  height="80"/>
     <rect x="290"  y="200" width="160" height="130"/>
@@ -23,27 +20,21 @@
     <rect x="900"  y="170" width="130" height="100"/>
     <rect x="1050" y="200" width="110" height="130"/>
 
-    <!-- tercera fila -->
     <rect x="40"   y="370" width="160" height="140"/>
-    <rect x="220"  y="370" width="110" height="90"/>
     <rect x="350"  y="370" width="80"  height="140"/>
     <rect x="450"  y="380" width="170" height="110"/>
     <rect x="640"  y="380" width="120" height="90"/>
     <rect x="780"  y="370" width="100" height="140"/>
-    <rect x="900"  y="370" width="160" height="120"/>
     <rect x="1080" y="370" width="80"  height="140"/>
 
-    <!-- cuarta fila -->
     <rect x="40"   y="540" width="120" height="90"/>
     <rect x="180"  y="540" width="160" height="120"/>
     <rect x="360"  y="540" width="100" height="90"/>
     <rect x="480"  y="540" width="140" height="120"/>
-    <rect x="640"  y="540" width="110" height="80"/>
     <rect x="770"  y="540" width="160" height="120"/>
     <rect x="950"  y="540" width="100" height="90"/>
     <rect x="1070" y="540" width="100" height="120"/>
 
-    <!-- quinta fila -->
     <rect x="40"   y="670" width="180" height="90"/>
     <rect x="240"  y="680" width="120" height="80"/>
     <rect x="380"  y="670" width="140" height="100"/>
@@ -54,33 +45,52 @@
   </g>
 
   <!-- Parques / zonas verdes -->
-  <g fill="#c9d4b6">
-    <rect x="370" y="50" width="160" height="80" rx="2"/>
-    <rect x="220" y="370" width="110" height="90" rx="2"/>
-    <rect x="640" y="540" width="110" height="80" rx="2"/>
+  <g fill="#b8e0b6">
+    <rect x="370" y="50"  width="160" height="80"  rx="2"/>
+    <rect x="220" y="370" width="110" height="90"  rx="2"/>
     <rect x="900" y="370" width="160" height="120" rx="2"/>
-    <!-- detalle de sendero en uno de los parques -->
-    <path d="M 920 410 Q 960 430 1000 420 T 1050 460" stroke="#a8853f" stroke-width="2" fill="none" opacity="0.5"/>
+    <rect x="640" y="540" width="110" height="80"  rx="2"/>
   </g>
 
-  <!-- Río en azul celeste (tipo Google Maps) -->
-  <path d="M -20 230 Q 220 180 380 260 T 760 230 Q 960 200 1220 280"
-        stroke="#8ec5f0" stroke-width="48" fill="none" stroke-linecap="round"/>
-  <path d="M -20 230 Q 220 180 380 260 T 760 230 Q 960 200 1220 280"
-        stroke="#b3d8f6" stroke-width="34" fill="none" stroke-linecap="round"/>
-
-  <!-- Avenidas principales (dorado oscuro) -->
-  <g stroke="#a8853f" stroke-width="20" fill="none" stroke-linecap="round">
-    <line x1="-20" y1="350" x2="1220" y2="350"/>
-    <line x1="-20" y1="520" x2="1220" y2="520"/>
-    <line x1="430" y1="-20" x2="430" y2="820"/>
-    <line x1="880" y1="-20" x2="880" y2="820"/>
-    <!-- Avenida diagonal -->
-    <line x1="0"   y1="0"   x2="1200" y2="800"/>
+  <!-- Campo de fútbol en un parque -->
+  <g>
+    <rect x="370" y="50" width="160" height="80" fill="#9bd09a" rx="2"/>
+    <rect x="385" y="62" width="130" height="56" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <line x1="450" y1="62" x2="450" y2="118" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="450" cy="90" r="10" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <rect x="385" y="78" width="14" height="24" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <rect x="501" y="78" width="14" height="24" fill="none" stroke="#ffffff" stroke-width="2"/>
   </g>
 
-  <!-- Calles secundarias (dorado claro) -->
-  <g stroke="#d9b97a" stroke-width="10" fill="none" stroke-linecap="round">
+  <!-- Autopista diagonal: contorno naranja + relleno amarillo -->
+  <line x1="-20" y1="-20" x2="1220" y2="820" stroke="#f5a623" stroke-width="26" stroke-linecap="round"/>
+  <line x1="-20" y1="-20" x2="1220" y2="820" stroke="#fbe169" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- Avenidas principales: contorno mostaza + relleno amarillo claro -->
+  <g stroke-linecap="round" fill="none">
+    <line x1="-20" y1="350" x2="1220" y2="350" stroke="#fbbc04" stroke-width="22"/>
+    <line x1="-20" y1="520" x2="1220" y2="520" stroke="#fbbc04" stroke-width="22"/>
+    <line x1="430" y1="-20" x2="430" y2="820" stroke="#fbbc04" stroke-width="22"/>
+    <line x1="880" y1="-20" x2="880" y2="820" stroke="#fbbc04" stroke-width="22"/>
+  </g>
+  <g stroke-linecap="round" fill="none">
+    <line x1="-20" y1="350" x2="1220" y2="350" stroke="#fde293" stroke-width="14"/>
+    <line x1="-20" y1="520" x2="1220" y2="520" stroke="#fde293" stroke-width="14"/>
+    <line x1="430" y1="-20" x2="430" y2="820" stroke="#fde293" stroke-width="14"/>
+    <line x1="880" y1="-20" x2="880" y2="820" stroke="#fde293" stroke-width="14"/>
+  </g>
+
+  <!-- Calles secundarias amarillo claro con contorno fino -->
+  <g stroke="#f7d774" stroke-width="10" fill="none" stroke-linecap="round">
+    <line x1="-20" y1="180" x2="1220" y2="180"/>
+    <line x1="-20" y1="660" x2="1220" y2="660"/>
+    <line x1="170" y1="-20" x2="170" y2="820"/>
+    <line x1="270" y1="-20" x2="270" y2="820"/>
+    <line x1="600" y1="-20" x2="600" y2="820"/>
+    <line x1="760" y1="-20" x2="760" y2="820"/>
+    <line x1="1040" y1="-20" x2="1040" y2="820"/>
+  </g>
+  <g stroke="#fef0b8" stroke-width="6" fill="none" stroke-linecap="round">
     <line x1="-20" y1="180" x2="1220" y2="180"/>
     <line x1="-20" y1="660" x2="1220" y2="660"/>
     <line x1="170" y1="-20" x2="170" y2="820"/>
@@ -90,19 +100,25 @@
     <line x1="1040" y1="-20" x2="1040" y2="820"/>
   </g>
 
-  <!-- Glorietas (rotondas) en intersecciones clave -->
+  <!-- Río azul celeste estilo Google Maps (encima de carreteras = puentes) -->
+  <path d="M -20 230 Q 220 180 380 260 T 760 230 Q 960 200 1220 280"
+        stroke="#8ec5f0" stroke-width="48" fill="none" stroke-linecap="round"/>
+  <path d="M -20 230 Q 220 180 380 260 T 760 230 Q 960 200 1220 280"
+        stroke="#b3d8f6" stroke-width="34" fill="none" stroke-linecap="round"/>
+
+  <!-- Glorietas (rotondas) con verde en el centro -->
   <g>
-    <circle cx="430" cy="350" r="22" fill="#f8f5f0" stroke="#a8853f" stroke-width="6"/>
-    <circle cx="880" cy="350" r="22" fill="#f8f5f0" stroke="#a8853f" stroke-width="6"/>
-    <circle cx="430" cy="520" r="20" fill="#f8f5f0" stroke="#a8853f" stroke-width="5"/>
-    <circle cx="880" cy="520" r="20" fill="#f8f5f0" stroke="#a8853f" stroke-width="5"/>
-    <circle cx="600" cy="180" r="14" fill="#f8f5f0" stroke="#d9b97a" stroke-width="4"/>
-    <circle cx="170" cy="660" r="14" fill="#f8f5f0" stroke="#d9b97a" stroke-width="4"/>
-    <circle cx="1040" cy="660" r="14" fill="#f8f5f0" stroke="#d9b97a" stroke-width="4"/>
+    <circle cx="430" cy="350" r="22" fill="#b8e0b6" stroke="#fbbc04" stroke-width="5"/>
+    <circle cx="880" cy="350" r="22" fill="#b8e0b6" stroke="#fbbc04" stroke-width="5"/>
+    <circle cx="430" cy="520" r="20" fill="#b8e0b6" stroke="#fbbc04" stroke-width="5"/>
+    <circle cx="880" cy="520" r="20" fill="#b8e0b6" stroke="#fbbc04" stroke-width="5"/>
+    <circle cx="600" cy="180" r="13" fill="#b8e0b6" stroke="#f7d774" stroke-width="4"/>
+    <circle cx="170" cy="660" r="13" fill="#b8e0b6" stroke="#f7d774" stroke-width="4"/>
+    <circle cx="1040" cy="660" r="13" fill="#b8e0b6" stroke="#f7d774" stroke-width="4"/>
   </g>
 
-  <!-- Marcas sutiles de inmuebles destacados (toques dorados) -->
-  <g fill="#c8a45c" opacity="0.85">
+  <!-- Pequeños puntos verdes (inmuebles destacados) -->
+  <g fill="#4caf50" opacity="0.9">
     <circle cx="290" cy="280" r="5"/>
     <circle cx="520" cy="440" r="5"/>
     <circle cx="800" cy="600" r="5"/>
