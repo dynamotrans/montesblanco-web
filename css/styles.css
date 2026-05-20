@@ -2069,7 +2069,7 @@ body.lightbox-open { overflow: hidden; }
   position: absolute;
   inset: 0;
   background: url('../images/portales-map.svg') center center / cover no-repeat;
-  opacity: 0.28;
+  opacity: 0.2;
   z-index: 0;
   pointer-events: none;
 }
