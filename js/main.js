@@ -188,7 +188,6 @@
   const lightbox = $('#lightbox');
   if (gallery && lightbox) {
     const lbImg = $('.lightbox__img', lightbox);
-    const lbCap = $('.lightbox__caption', lightbox);
     const btnPrev = $('.lightbox__nav--prev', lightbox);
     const btnNext = $('.lightbox__nav--next', lightbox);
     const btnClose = $('.lightbox__close', lightbox);
@@ -203,7 +202,6 @@
       current = (i + photos.length) % photos.length;
       lbImg.src = photos[current].src;
       lbImg.alt = photos[current].alt;
-      lbCap.textContent = photos[current].alt;
     };
     const open = (i) => {
       show(i);
@@ -230,6 +228,21 @@
       else if (e.key === 'ArrowLeft') show(current - 1);
       else if (e.key === 'ArrowRight') show(current + 1);
     });
+
+    // Swipe táctil para pasar fotos
+    let touchStartX = 0;
+    let touchStartY = 0;
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+      touchStartY = e.changedTouches[0].clientY;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+        show(dx < 0 ? current + 1 : current - 1);
+      }
+    }, { passive: true });
   }
 
   /* ============== BACK TO TOP ============== */
