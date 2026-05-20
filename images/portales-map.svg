@@ -1,128 +1,311 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-  <!-- Fondo gris claro tipo mapa -->
-  <rect width="1200" height="800" fill="#ededed"/>
+  <!-- =============================================================
+       FONDO + TRAMA URBANA (manzanas)
+       ============================================================= -->
+  <rect width="1200" height="800" fill="#e7e7e7"/>
 
-  <!-- Manzanas / bloques gris medio -->
-  <g fill="#d6d6d6">
-    <rect x="40"   y="50"  width="170" height="110"/>
-    <rect x="230"  y="50"  width="120" height="110"/>
-    <rect x="550"  y="50"  width="140" height="90"/>
-    <rect x="710"  y="50"  width="180" height="110"/>
-    <rect x="910"  y="50"  width="110" height="80"/>
-    <rect x="1040" y="50"  width="120" height="110"/>
-
-    <rect x="40"   y="200" width="120" height="130"/>
-    <rect x="180"  y="200" width="90"  height="80"/>
-    <rect x="290"  y="200" width="160" height="130"/>
-    <rect x="470"  y="170" width="100" height="80"/>
-    <rect x="600"  y="170" width="90"  height="60"/>
-    <rect x="710"  y="200" width="170" height="130"/>
-    <rect x="900"  y="170" width="130" height="100"/>
-    <rect x="1050" y="200" width="110" height="130"/>
-
-    <rect x="40"   y="370" width="160" height="140"/>
-    <rect x="350"  y="370" width="80"  height="140"/>
-    <rect x="450"  y="380" width="170" height="110"/>
-    <rect x="640"  y="380" width="120" height="90"/>
-    <rect x="780"  y="370" width="100" height="140"/>
-    <rect x="1080" y="370" width="80"  height="140"/>
-
-    <rect x="40"   y="540" width="120" height="90"/>
-    <rect x="180"  y="540" width="160" height="120"/>
-    <rect x="360"  y="540" width="100" height="90"/>
-    <rect x="480"  y="540" width="140" height="120"/>
-    <rect x="770"  y="540" width="160" height="120"/>
-    <rect x="950"  y="540" width="100" height="90"/>
-    <rect x="1070" y="540" width="100" height="120"/>
-
-    <rect x="40"   y="670" width="180" height="90"/>
-    <rect x="240"  y="680" width="120" height="80"/>
-    <rect x="380"  y="670" width="140" height="100"/>
-    <rect x="540"  y="680" width="110" height="80"/>
-    <rect x="670"  y="670" width="160" height="100"/>
-    <rect x="850"  y="680" width="100" height="80"/>
-    <rect x="970"  y="670" width="190" height="100"/>
+  <!-- Manzanas claras (variación) -->
+  <g fill="#f1f1f1">
+    <rect x="260" y="60"  width="120" height="60"/>
+    <rect x="730" y="60"  width="60"  height="40"/>
+    <rect x="800" y="60"  width="90"  height="60"/>
+    <rect x="900" y="60"  width="60"  height="40"/>
+    <rect x="970" y="60"  width="70"  height="60"/>
+    <rect x="1050" y="60" width="120" height="60"/>
+    <rect x="260" y="150" width="60"  height="40"/>
+    <rect x="330" y="150" width="50"  height="60"/>
+    <rect x="730" y="150" width="80"  height="50"/>
+    <rect x="820" y="150" width="60"  height="40"/>
+    <rect x="890" y="150" width="80"  height="60"/>
+    <rect x="980" y="150" width="60"  height="40"/>
+    <rect x="1050" y="150" width="120" height="60"/>
+    <rect x="40"  y="320" width="90"  height="60"/>
+    <rect x="150" y="320" width="120" height="50"/>
+    <rect x="290" y="320" width="60"  height="50"/>
+    <rect x="370" y="320" width="80"  height="50"/>
+    <rect x="470" y="320" width="60"  height="50"/>
+    <rect x="540" y="320" width="120" height="60"/>
+    <rect x="680" y="320" width="60"  height="50"/>
+    <rect x="800" y="320" width="50"  height="60"/>
+    <rect x="870" y="320" width="120" height="50"/>
+    <rect x="1000" y="320" width="60" height="50"/>
+    <rect x="1080" y="320" width="80" height="50"/>
+    <rect x="40"  y="540" width="100" height="60"/>
+    <rect x="160" y="540" width="60"  height="40"/>
+    <rect x="240" y="540" width="60"  height="60"/>
+    <rect x="380" y="540" width="50"  height="50"/>
+    <rect x="450" y="540" width="80"  height="60"/>
+    <rect x="540" y="540" width="60"  height="40"/>
+    <rect x="620" y="540" width="60"  height="60"/>
+    <rect x="710" y="540" width="120" height="50"/>
+    <rect x="850" y="540" width="60"  height="60"/>
+    <rect x="930" y="540" width="80"  height="50"/>
+    <rect x="1030" y="540" width="60" height="60"/>
+    <rect x="1110" y="540" width="60" height="50"/>
+    <rect x="40"  y="740" width="60"  height="40"/>
+    <rect x="120" y="740" width="100" height="50"/>
+    <rect x="240" y="740" width="80"  height="40"/>
+    <rect x="340" y="740" width="60"  height="50"/>
+    <rect x="420" y="740" width="80"  height="40"/>
+    <rect x="520" y="740" width="120" height="50"/>
+    <rect x="660" y="740" width="60"  height="40"/>
+    <rect x="740" y="740" width="80"  height="50"/>
+    <rect x="840" y="740" width="100" height="40"/>
+    <rect x="960" y="740" width="60"  height="50"/>
   </g>
 
-  <!-- Parques / zonas verdes -->
-  <g fill="#b8e0b6">
-    <rect x="370" y="50"  width="160" height="80"  rx="2"/>
-    <rect x="220" y="370" width="110" height="90"  rx="2"/>
-    <rect x="900" y="370" width="160" height="120" rx="2"/>
-    <rect x="640" y="540" width="110" height="80"  rx="2"/>
+  <!-- Manzanas medias -->
+  <g fill="#d8d8d8">
+    <rect x="40"  y="60"  width="200" height="60"/>
+    <rect x="40"  y="150" width="200" height="60"/>
+    <rect x="400" y="150" width="60"  height="60"/>
+    <rect x="480" y="150" width="200" height="60"/>
+    <rect x="900" y="220" width="80"  height="60"/>
+    <rect x="1010" y="220" width="160" height="60"/>
+    <rect x="40"  y="220" width="80"  height="60"/>
+    <rect x="140" y="220" width="120" height="60"/>
+    <rect x="280" y="220" width="80"  height="60"/>
+    <rect x="370" y="220" width="60"  height="60"/>
+    <rect x="440" y="220" width="80"  height="60"/>
+    <rect x="780" y="220" width="100" height="60"/>
+    <rect x="40"  y="400" width="80"  height="60"/>
+    <rect x="140" y="400" width="60"  height="60"/>
+    <rect x="220" y="400" width="100" height="60"/>
+    <rect x="370" y="400" width="60"  height="60"/>
+    <rect x="450" y="400" width="80"  height="60"/>
+    <rect x="800" y="400" width="60"  height="60"/>
+    <rect x="880" y="400" width="120" height="60"/>
+    <rect x="1020" y="400" width="80" height="60"/>
+    <rect x="1120" y="400" width="40" height="60"/>
+    <rect x="40"  y="620" width="120" height="60"/>
+    <rect x="180" y="620" width="80"  height="60"/>
+    <rect x="280" y="620" width="60"  height="60"/>
+    <rect x="360" y="620" width="120" height="60"/>
+    <rect x="500" y="620" width="80"  height="60"/>
+    <rect x="600" y="620" width="100" height="60"/>
+    <rect x="720" y="620" width="80"  height="60"/>
+    <rect x="820" y="620" width="60"  height="60"/>
+    <rect x="900" y="620" width="120" height="60"/>
+    <rect x="1040" y="620" width="120" height="60"/>
   </g>
 
-  <!-- Campo de fútbol en un parque -->
-  <g>
-    <rect x="370" y="50" width="160" height="80" fill="#9bd09a" rx="2"/>
-    <rect x="385" y="62" width="130" height="56" fill="none" stroke="#ffffff" stroke-width="2"/>
-    <line x1="450" y1="62" x2="450" y2="118" stroke="#ffffff" stroke-width="2"/>
-    <circle cx="450" cy="90" r="10" fill="none" stroke="#ffffff" stroke-width="2"/>
-    <rect x="385" y="78" width="14" height="24" fill="none" stroke="#ffffff" stroke-width="2"/>
-    <rect x="501" y="78" width="14" height="24" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <!-- =============================================================
+       PARQUES y ZONAS VERDES
+       ============================================================= -->
+  <!-- Parque del campo de fútbol (arriba-izquierda, va hasta el borde) -->
+  <path d="M -20 80 L 240 80 L 250 290 L -20 290 Z" fill="#a8d896"/>
+  <!-- Senderito del parque -->
+  <path d="M 30 280 Q 80 240 130 250 T 230 230" fill="none" stroke="#9ec890" stroke-width="2"/>
+
+  <!-- Campo de fútbol -->
+  <g transform="translate(20,110)">
+    <rect width="200" height="140" fill="#9bd09a"/>
+    <rect x="8"  y="8"  width="184" height="124" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <line x1="100" y1="8" x2="100" y2="132" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="100" cy="70" r="20" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="100" cy="70" r="2" fill="#ffffff"/>
+    <rect x="8"  y="40" width="26" height="60" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <rect x="166" y="40" width="26" height="60" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <rect x="8"  y="55" width="10" height="30" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <rect x="182" y="55" width="10" height="30" fill="none" stroke="#ffffff" stroke-width="3"/>
   </g>
 
-  <!-- Autopista diagonal: contorno naranja + relleno amarillo -->
-  <line x1="-20" y1="-20" x2="1220" y2="820" stroke="#f5a623" stroke-width="26" stroke-linecap="round"/>
-  <line x1="-20" y1="-20" x2="1220" y2="820" stroke="#fbe169" stroke-width="16" stroke-linecap="round"/>
+  <!-- Parque superior con sendero y estanque -->
+  <path d="M 460 -20 L 720 -20 L 720 140 L 460 140 Z" fill="#a8d896"/>
+  <!-- Sendero -->
+  <path d="M 480 20 Q 560 60 620 50 Q 680 40 720 90" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.85"/>
+  <!-- Estanque -->
+  <ellipse cx="620" cy="55" rx="26" ry="16" fill="#8ec5f0"/>
+  <ellipse cx="620" cy="55" rx="20" ry="11" fill="#b3d8f6"/>
 
-  <!-- Avenidas principales: contorno mostaza + relleno amarillo claro -->
+  <!-- Parque triangular inferior-izquierda -->
+  <path d="M 250 580 L 400 580 L 330 720 Z" fill="#a8d896"/>
+  <path d="M 290 595 Q 330 620 360 600 Q 380 620 360 660" fill="none" stroke="#9ec890" stroke-width="2"/>
+
+  <!-- Parque medio-derecha -->
+  <rect x="1040" y="320" width="140" height="60" fill="#a8d896" rx="2"/>
+
+  <!-- Parque junto al río (orilla curva) -->
+  <path d="M 80 360 Q 200 320 280 360 L 280 410 Q 200 370 80 410 Z" fill="#a8d896" opacity="0.7"/>
+
+  <!-- Parque inferior-derecha con sendero curvo -->
+  <path d="M 1020 700 L 1180 700 L 1200 800 L 1020 800 Z" fill="#a8d896"/>
+  <path d="M 1030 740 Q 1080 720 1130 750 Q 1170 780 1180 800" fill="none" stroke="#9ec890" stroke-width="3"/>
+
+  <!-- Pequeños parques cuadrados intercalados -->
+  <rect x="900" y="130" width="80" height="50" fill="#a8d896" rx="2"/>
+  <rect x="40"  y="460" width="60" height="40" fill="#a8d896" rx="2"/>
+  <rect x="540" y="620" width="60" height="40" fill="#a8d896" rx="2"/>
+
+  <!-- =============================================================
+       CARRETERAS - TODOS LOS CONTORNOS PRIMERO (para cruces limpios)
+       ============================================================= -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Autopista (doble línea) contorno naranja -->
+    <path d="M 470 -20 Q 430 100 380 220 Q 320 360 240 500 Q 160 660 80 820" stroke="#f5a623" stroke-width="16"/>
+    <path d="M 500 -20 Q 460 100 410 220 Q 350 360 270 500 Q 190 660 110 820" stroke="#f5a623" stroke-width="16"/>
+
+    <!-- Arterias principales (contorno mostaza) -->
+    <line x1="-20" y1="290" x2="1220" y2="290" stroke="#fbbc04" stroke-width="22"/>
+    <line x1="-20" y1="500" x2="510" y2="500" stroke="#fbbc04" stroke-width="22"/>
+    <line x1="710" y1="500" x2="1220" y2="500" stroke="#fbbc04" stroke-width="22"/>
+    <line x1="-20" y1="700" x2="1220" y2="700" stroke="#fbbc04" stroke-width="22"/>
+    <line x1="260" y1="-20" x2="260" y2="820" stroke="#fbbc04" stroke-width="22"/>
+    <line x1="440" y1="-20" x2="440" y2="280" stroke="#fbbc04" stroke-width="22"/>
+    <line x1="440" y1="710" x2="440" y2="820" stroke="#fbbc04" stroke-width="22"/>
+    <line x1="780" y1="-20" x2="780" y2="280" stroke="#fbbc04" stroke-width="22"/>
+    <line x1="780" y1="710" x2="780" y2="820" stroke="#fbbc04" stroke-width="22"/>
+    <line x1="1000" y1="-20" x2="1000" y2="820" stroke="#fbbc04" stroke-width="22"/>
+
+    <!-- Anillo viario alrededor de la plaza central (octogonal) -->
+    <path d="M 530 380 Q 610 340 690 380 L 780 470 Q 740 550 690 590 Q 610 630 530 590 L 440 500 Q 480 420 530 380 Z" stroke="#fbbc04" stroke-width="20"/>
+
+    <!-- Diagonales que entran a la plaza -->
+    <line x1="260" y1="290" x2="500" y2="430" stroke="#fbbc04" stroke-width="18"/>
+    <line x1="1000" y1="290" x2="720" y2="430" stroke="#fbbc04" stroke-width="18"/>
+    <line x1="260" y1="700" x2="510" y2="560" stroke="#fbbc04" stroke-width="18"/>
+    <line x1="1000" y1="700" x2="720" y2="560" stroke="#fbbc04" stroke-width="18"/>
+
+    <!-- Calles secundarias -->
+    <line x1="-20" y1="60"  x2="1220" y2="60"  stroke="#f7d774" stroke-width="10"/>
+    <line x1="-20" y1="150" x2="1220" y2="150" stroke="#f7d774" stroke-width="10"/>
+    <line x1="-20" y1="220" x2="1220" y2="220" stroke="#f7d774" stroke-width="10"/>
+    <line x1="-20" y1="400" x2="1220" y2="400" stroke="#f7d774" stroke-width="10"/>
+    <line x1="-20" y1="620" x2="1220" y2="620" stroke="#f7d774" stroke-width="10"/>
+    <line x1="-20" y1="780" x2="1220" y2="780" stroke="#f7d774" stroke-width="10"/>
+    <line x1="40"  y1="-20" x2="40"  y2="820" stroke="#f7d774" stroke-width="10"/>
+    <line x1="140" y1="-20" x2="140" y2="820" stroke="#f7d774" stroke-width="10"/>
+    <line x1="360" y1="-20" x2="360" y2="820" stroke="#f7d774" stroke-width="10"/>
+    <line x1="540" y1="-20" x2="540" y2="290" stroke="#f7d774" stroke-width="10"/>
+    <line x1="680" y1="-20" x2="680" y2="290" stroke="#f7d774" stroke-width="10"/>
+    <line x1="540" y1="700" x2="540" y2="820" stroke="#f7d774" stroke-width="10"/>
+    <line x1="680" y1="700" x2="680" y2="820" stroke="#f7d774" stroke-width="10"/>
+    <line x1="880" y1="-20" x2="880" y2="820" stroke="#f7d774" stroke-width="10"/>
+    <line x1="1100" y1="-20" x2="1100" y2="820" stroke="#f7d774" stroke-width="10"/>
+  </g>
+
+  <!-- =============================================================
+       CARRETERAS - TODOS LOS RELLENOS ENCIMA (intersecciones limpias)
+       ============================================================= -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Autopista doble (relleno amarillo) -->
+    <path d="M 470 -20 Q 430 100 380 220 Q 320 360 240 500 Q 160 660 80 820" stroke="#fbe169" stroke-width="10"/>
+    <path d="M 500 -20 Q 460 100 410 220 Q 350 360 270 500 Q 190 660 110 820" stroke="#fbe169" stroke-width="10"/>
+
+    <!-- Arterias principales (amarillo claro) -->
+    <line x1="-20" y1="290" x2="1220" y2="290" stroke="#fde293" stroke-width="14"/>
+    <line x1="-20" y1="500" x2="510" y2="500" stroke="#fde293" stroke-width="14"/>
+    <line x1="710" y1="500" x2="1220" y2="500" stroke="#fde293" stroke-width="14"/>
+    <line x1="-20" y1="700" x2="1220" y2="700" stroke="#fde293" stroke-width="14"/>
+    <line x1="260" y1="-20" x2="260" y2="820" stroke="#fde293" stroke-width="14"/>
+    <line x1="440" y1="-20" x2="440" y2="280" stroke="#fde293" stroke-width="14"/>
+    <line x1="440" y1="710" x2="440" y2="820" stroke="#fde293" stroke-width="14"/>
+    <line x1="780" y1="-20" x2="780" y2="280" stroke="#fde293" stroke-width="14"/>
+    <line x1="780" y1="710" x2="780" y2="820" stroke="#fde293" stroke-width="14"/>
+    <line x1="1000" y1="-20" x2="1000" y2="820" stroke="#fde293" stroke-width="14"/>
+
+    <path d="M 530 380 Q 610 340 690 380 L 780 470 Q 740 550 690 590 Q 610 630 530 590 L 440 500 Q 480 420 530 380 Z" stroke="#fde293" stroke-width="12"/>
+
+    <line x1="260" y1="290" x2="500" y2="430" stroke="#fde293" stroke-width="10"/>
+    <line x1="1000" y1="290" x2="720" y2="430" stroke="#fde293" stroke-width="10"/>
+    <line x1="260" y1="700" x2="510" y2="560" stroke="#fde293" stroke-width="10"/>
+    <line x1="1000" y1="700" x2="720" y2="560" stroke="#fde293" stroke-width="10"/>
+
+    <!-- Secundarias (amarillo más pálido) -->
+    <line x1="-20" y1="60"  x2="1220" y2="60"  stroke="#fef0b8" stroke-width="6"/>
+    <line x1="-20" y1="150" x2="1220" y2="150" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="-20" y1="220" x2="1220" y2="220" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="-20" y1="400" x2="1220" y2="400" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="-20" y1="620" x2="1220" y2="620" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="-20" y1="780" x2="1220" y2="780" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="40"  y1="-20" x2="40"  y2="820" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="140" y1="-20" x2="140" y2="820" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="360" y1="-20" x2="360" y2="820" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="540" y1="-20" x2="540" y2="290" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="680" y1="-20" x2="680" y2="290" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="540" y1="700" x2="540" y2="820" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="680" y1="700" x2="680" y2="820" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="880" y1="-20" x2="880" y2="820" stroke="#fef0b8" stroke-width="6"/>
+    <line x1="1100" y1="-20" x2="1100" y2="820" stroke="#fef0b8" stroke-width="6"/>
+  </g>
+
+  <!-- =============================================================
+       RÍO (S-curva que envuelve la plaza por la derecha)
+       ============================================================= -->
   <g stroke-linecap="round" fill="none">
-    <line x1="-20" y1="350" x2="1220" y2="350" stroke="#fbbc04" stroke-width="22"/>
-    <line x1="-20" y1="520" x2="1220" y2="520" stroke="#fbbc04" stroke-width="22"/>
-    <line x1="430" y1="-20" x2="430" y2="820" stroke="#fbbc04" stroke-width="22"/>
-    <line x1="880" y1="-20" x2="880" y2="820" stroke="#fbbc04" stroke-width="22"/>
-  </g>
-  <g stroke-linecap="round" fill="none">
-    <line x1="-20" y1="350" x2="1220" y2="350" stroke="#fde293" stroke-width="14"/>
-    <line x1="-20" y1="520" x2="1220" y2="520" stroke="#fde293" stroke-width="14"/>
-    <line x1="430" y1="-20" x2="430" y2="820" stroke="#fde293" stroke-width="14"/>
-    <line x1="880" y1="-20" x2="880" y2="820" stroke="#fde293" stroke-width="14"/>
+    <path d="M -30 380 Q 120 320 240 360 Q 360 400 460 340 Q 540 290 620 320 Q 700 350 760 410 Q 820 470 810 540 Q 800 620 880 660 Q 980 700 1080 660 Q 1140 640 1230 670"
+          stroke="#5a98d4" stroke-width="44"/>
+    <path d="M -30 380 Q 120 320 240 360 Q 360 400 460 340 Q 540 290 620 320 Q 700 350 760 410 Q 820 470 810 540 Q 800 620 880 660 Q 980 700 1080 660 Q 1140 640 1230 670"
+          stroke="#8ec5f0" stroke-width="34"/>
+    <path d="M -30 380 Q 120 320 240 360 Q 360 400 460 340 Q 540 290 620 320 Q 700 350 760 410 Q 820 470 810 540 Q 800 620 880 660 Q 980 700 1080 660 Q 1140 640 1230 670"
+          stroke="#b3d8f6" stroke-width="22"/>
+
+    <!-- Pequeño afluente -->
+    <path d="M 900 -20 Q 880 60 850 120 Q 820 180 800 240 Q 780 290 760 330"
+          stroke="#5a98d4" stroke-width="20"/>
+    <path d="M 900 -20 Q 880 60 850 120 Q 820 180 800 240 Q 780 290 760 330"
+          stroke="#b3d8f6" stroke-width="12"/>
   </g>
 
-  <!-- Calles secundarias amarillo claro con contorno fino -->
-  <g stroke="#f7d774" stroke-width="10" fill="none" stroke-linecap="round">
-    <line x1="-20" y1="180" x2="1220" y2="180"/>
-    <line x1="-20" y1="660" x2="1220" y2="660"/>
-    <line x1="170" y1="-20" x2="170" y2="820"/>
-    <line x1="270" y1="-20" x2="270" y2="820"/>
-    <line x1="600" y1="-20" x2="600" y2="820"/>
-    <line x1="760" y1="-20" x2="760" y2="820"/>
-    <line x1="1040" y1="-20" x2="1040" y2="820"/>
-  </g>
-  <g stroke="#fef0b8" stroke-width="6" fill="none" stroke-linecap="round">
-    <line x1="-20" y1="180" x2="1220" y2="180"/>
-    <line x1="-20" y1="660" x2="1220" y2="660"/>
-    <line x1="170" y1="-20" x2="170" y2="820"/>
-    <line x1="270" y1="-20" x2="270" y2="820"/>
-    <line x1="600" y1="-20" x2="600" y2="820"/>
-    <line x1="760" y1="-20" x2="760" y2="820"/>
-    <line x1="1040" y1="-20" x2="1040" y2="820"/>
-  </g>
-
-  <!-- Río azul celeste estilo Google Maps (encima de carreteras = puentes) -->
-  <path d="M -20 230 Q 220 180 380 260 T 760 230 Q 960 200 1220 280"
-        stroke="#8ec5f0" stroke-width="48" fill="none" stroke-linecap="round"/>
-  <path d="M -20 230 Q 220 180 380 260 T 760 230 Q 960 200 1220 280"
-        stroke="#b3d8f6" stroke-width="34" fill="none" stroke-linecap="round"/>
-
-  <!-- Glorietas (rotondas) con verde en el centro -->
+  <!-- =============================================================
+       PLAZA CENTRAL OCTOGONAL (encima de las carreteras)
+       ============================================================= -->
   <g>
-    <circle cx="430" cy="350" r="22" fill="#b8e0b6" stroke="#fbbc04" stroke-width="5"/>
-    <circle cx="880" cy="350" r="22" fill="#b8e0b6" stroke="#fbbc04" stroke-width="5"/>
-    <circle cx="430" cy="520" r="20" fill="#b8e0b6" stroke="#fbbc04" stroke-width="5"/>
-    <circle cx="880" cy="520" r="20" fill="#b8e0b6" stroke="#fbbc04" stroke-width="5"/>
-    <circle cx="600" cy="180" r="13" fill="#b8e0b6" stroke="#f7d774" stroke-width="4"/>
-    <circle cx="170" cy="660" r="13" fill="#b8e0b6" stroke="#f7d774" stroke-width="4"/>
-    <circle cx="1040" cy="660" r="13" fill="#b8e0b6" stroke="#f7d774" stroke-width="4"/>
+    <polygon points="580,440 660,440 700,480 700,520 660,560 580,560 540,520 540,480"
+             fill="#a8d896" stroke="#fbbc04" stroke-width="6"/>
+    <circle cx="620" cy="500" r="14" fill="#9bd09a"/>
   </g>
 
-  <!-- Pequeños puntos verdes (inmuebles destacados) -->
-  <g fill="#4caf50" opacity="0.9">
-    <circle cx="290" cy="280" r="5"/>
-    <circle cx="520" cy="440" r="5"/>
-    <circle cx="800" cy="600" r="5"/>
-    <circle cx="1100" cy="280" r="5"/>
-    <circle cx="120" cy="460" r="5"/>
+  <!-- =============================================================
+       VÍAS DE TREN (diagonal inferior-izquierda)
+       ============================================================= -->
+  <g>
+    <line x1="200" y1="820" x2="430" y2="540" stroke="#bfbfbf" stroke-width="10"/>
+    <line x1="200" y1="820" x2="430" y2="540" stroke="#e0e0e0" stroke-width="4"/>
+    <!-- Traviesas -->
+    <g stroke="#9c9c9c" stroke-width="2">
+      <line x1="206" y1="810" x2="220" y2="800"/>
+      <line x1="226" y1="785" x2="240" y2="775"/>
+      <line x1="246" y1="760" x2="260" y2="750"/>
+      <line x1="266" y1="735" x2="280" y2="725"/>
+      <line x1="286" y1="710" x2="300" y2="700"/>
+      <line x1="306" y1="685" x2="320" y2="675"/>
+      <line x1="326" y1="660" x2="340" y2="650"/>
+      <line x1="346" y1="635" x2="360" y2="625"/>
+      <line x1="366" y1="610" x2="380" y2="600"/>
+      <line x1="386" y1="585" x2="400" y2="575"/>
+      <line x1="406" y1="560" x2="420" y2="550"/>
+    </g>
+  </g>
+
+  <!-- =============================================================
+       GLORIETAS / ROTONDAS en cruces clave
+       ============================================================= -->
+  <g>
+    <!-- Mayores (arteria + arteria) -->
+    <circle cx="260" cy="290" r="22" fill="#a8d896" stroke="#fbbc04" stroke-width="6"/>
+    <circle cx="780" cy="700" r="22" fill="#a8d896" stroke="#fbbc04" stroke-width="6"/>
+    <circle cx="440" cy="290" r="20" fill="#a8d896" stroke="#fbbc04" stroke-width="5"/>
+    <circle cx="780" cy="290" r="20" fill="#a8d896" stroke="#fbbc04" stroke-width="5"/>
+    <circle cx="1000" cy="290" r="20" fill="#a8d896" stroke="#fbbc04" stroke-width="5"/>
+    <circle cx="260" cy="700" r="20" fill="#a8d896" stroke="#fbbc04" stroke-width="5"/>
+    <circle cx="440" cy="700" r="20" fill="#a8d896" stroke="#fbbc04" stroke-width="5"/>
+    <circle cx="1000" cy="700" r="20" fill="#a8d896" stroke="#fbbc04" stroke-width="5"/>
+    <circle cx="1000" cy="500" r="20" fill="#a8d896" stroke="#fbbc04" stroke-width="5"/>
+
+    <!-- Secundarias (más pequeñas) -->
+    <circle cx="260" cy="500" r="14" fill="#a8d896" stroke="#f7d774" stroke-width="4"/>
+  </g>
+
+  <!-- =============================================================
+       PUNTOS DORADOS (inmuebles destacados)
+       ============================================================= -->
+  <g fill="#c8a45c">
+    <circle cx="140" cy="350" r="5"/>
+    <circle cx="380" cy="450" r="5"/>
+    <circle cx="900" cy="350" r="5"/>
+    <circle cx="1140" cy="600" r="5"/>
+    <circle cx="600" cy="180" r="5"/>
+    <circle cx="850" cy="450" r="5"/>
   </g>
 </svg>
