@@ -495,6 +495,7 @@ font[style*="vertical-align"] {
    video. Sólo aparece (fade-in) cuando el video termina */
 .hero__media .hero__img-fallback {
   opacity: 0;
+  object-position: center 28%;
   transition: opacity 2.5s ease-in-out;
   animation: heroZoom 22s ease-in-out infinite alternate;
 }
