@@ -322,16 +322,22 @@
   const setLang = (code) => {
     const host = location.hostname;
 
-    // Limpiar cookie googtrans en todas las variantes de dominio
+    // Limpiar cookie googtrans en TODAS las variantes posibles:
+    // sin dominio, host actual, host con punto inicial, y el dominio
+    // raíz (eTLD+1) — GT a veces la fija en el dominio padre.
     const clearCookie = (extra) => {
       document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT' +
         (extra ? '; ' + extra : '');
     };
-    clearCookie('');
-    if (host) {
-      clearCookie('domain=.' + host);
-      clearCookie('domain=' + host);
+    const domainsToClear = new Set(['', host, '.' + host]);
+    if (host && host.indexOf('.') !== -1) {
+      const parts = host.split('.');
+      // Dominio raíz tipo "montesblanco.com" (heurística simple para TLDs comunes)
+      const apex = parts.slice(-2).join('.');
+      domainsToClear.add(apex);
+      domainsToClear.add('.' + apex);
     }
+    domainsToClear.forEach(d => clearCookie(d ? 'domain=' + d : ''));
 
     // Reset a español: GT no puede deshacer una traducción sin recargar
     if (!code || code === 'es') {
@@ -340,12 +346,18 @@
       return;
     }
 
-    // Persistir cookie para próxima visita (formato /source/target)
+    // Persistir cookie para próxima visita (formato /source/target).
+    // La fijamos en el dominio raíz (.montesblanco.com) para que cubra
+    // www y apex, y persista entre subdominios.
     const value = '/es/' + code;
     document.cookie = 'googtrans=' + value + '; path=/';
     if (host) {
       document.cookie = 'googtrans=' + value + '; path=/; domain=' + host;
       document.cookie = 'googtrans=' + value + '; path=/; domain=.' + host;
+      if (host.indexOf('.') !== -1) {
+        const apex = host.split('.').slice(-2).join('.');
+        document.cookie = 'googtrans=' + value + '; path=/; domain=.' + apex;
+      }
     }
 
     // Sincronizar atributos del <html> para que Chrome no ofrezca traducir
