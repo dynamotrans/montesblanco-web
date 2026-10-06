@@ -8,7 +8,8 @@ Sitio web oficial de **Montes Blanco Real Estate SL** — inmobiliaria boutique 
 - HTML5 + CSS3 + Vanilla JS (sin frameworks, sin build)
 - Hosting: **Vercel** (despliegue automático desde `main`)
 - Tipografías: Cormorant Garamond + Inter (Google Fonts)
-- Formulario: FormSubmit (sin backend)
+- Contacto: enlaces a WhatsApp, teléfono y email (no hay formulario todavía)
+- Plataforma interna de gestión: repo aparte `dynamotrans/montesblanco-plataforma`, en https://gestion.montesblanco.com (enlace en el pie de página)
 - i18n: 7 idiomas (ES por defecto, EN/FR/DE/PT/RU/AR) vía `js/translations.json`
 
 ## Estructura

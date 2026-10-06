@@ -1497,6 +1497,22 @@ font[style*="vertical-align"] {
   color: rgba(255, 255, 255, 0.55);
 }
 
+.footer__staff {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer__staff svg { width: 14px; height: 14px; flex-shrink: 0; }
+.footer__staff:hover,
+.footer__staff:focus-visible { color: #fff; }
+/* Deja sitio al botón flotante de Manolo (92px + 28px) para que no tape el enlace */
+@media (min-width: 769px) {
+  .footer__bottom { padding-right: 130px; }
+}
+
 /* ---------- WHATSAPP FAB ---------- */
 /* Stack flotante: foto de Manolo + menú de canales que despliega */
 .fab-stack {
