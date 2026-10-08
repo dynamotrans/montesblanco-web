@@ -73,4 +73,4 @@ Si están vacías, los iconos se ocultan automáticamente.
 ## Contacto del negocio
 - C. Canónigo 49, oficina derecha · 41701 Dos Hermanas, Sevilla
 - 854 69 14 60 · +34 635 64 38 27
-- info@montesblanco.com
+- manolo@montesblanco.com
